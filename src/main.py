@@ -14,27 +14,37 @@ def parse_docsets(input_xml_filename):
     # TODO
 
     # Example
-    docsets = [
-        ['Docset 1 sentence 1?', 'Docset 1 sentence 2.', 'Docset 1 sentence 3.'],
-        ['Docset 2 sentence 1.', 'Docset 2 sentence 2.', 'Docset 2 sentence 3!'],
-        ['Docset 3 sentence 1.', 'Docset 3 sentence 2...', 'Docset 3 sentence 3.'],
-    ]
+    docsets = {
+        # Dict mapping topic ID to sentence list
+        'D0901A': ['Docset 1 sentence 1?', 'Docset 1 sentence 2.', 'Docset 1 sentence 3.'],
+        'D0912A': ['Docset 2 sentence 1.', 'Docset 2 sentence 2.', 'Docset 2 sentence 3!'],
+        'D0934A': ['Docset 3 sentence 1.', 'Docset 3 sentence 2...', 'Docset 3 sentence 3.'],
+    }
     return docsets
+
+def print_sentences(output_base_dir, topic_id, sentences):
+    output_filename = '{}/{}.out'.format(output_base_dir, topic_id)
+    with open(output_filename, 'w') as out_f:
+        for sentence in sentences:
+            out_f.write(sentence + '\n')
 
 if __name__ == '__main__':
     # Input to the script is an XML file name
-    if len(sys.argv) < 2:
-        print('Usage: {} input_xml_filename'.format(sys.argv[0]))
+    if len(sys.argv) < 3:
+        print('Usage: {} input_xml_filename output_base_dir'.format(sys.argv[0]))
         exit()
     input_xml_filename = sys.argv[1]
+    output_base_dir = sys.argv[2]
 
     content_selector = ContentSelector()
     info_order = InfoOrder()
     sentence_realizer = SentenceRealizer()
 
     docsets = parse_docsets(input_xml_filename)
-    for sentences in docsets:
+    for topic_id, sentences in docsets.items():
         selected_sentences = content_selector.select(sentences)
         ordered_sentences = info_order.process(selected_sentences)
         realized_sentences = sentence_realizer.process(sentences)
-        print(realized_sentences)
+        print_sentences(output_base_dir, topic_id, realized_sentences)
+
+    # TODO evaluation
