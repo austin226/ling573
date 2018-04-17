@@ -5,6 +5,7 @@ import sys
 from content_selection import ContentSelector
 from info_ordering import InfoOrder
 from sentence_realization import SentenceRealizer
+from summarizer import Summarizer
 
 def parse_docsets(input_xml_filename):
     '''
@@ -39,12 +40,11 @@ if __name__ == '__main__':
     content_selector = ContentSelector()
     info_order = InfoOrder()
     sentence_realizer = SentenceRealizer()
+    summarizer = Summarizer(content_selector, info_order, sentence_realizer)
 
     docsets = parse_docsets(input_xml_filename)
     for topic_id, sentences in docsets.items():
-        selected_sentences = content_selector.select(sentences)
-        ordered_sentences = info_order.process(selected_sentences)
-        realized_sentences = sentence_realizer.process(sentences)
-        print_sentences(output_base_dir, topic_id, realized_sentences)
+        summary = summarizer.summarize(sentences)
+        print_sentences(output_base_dir, topic_id, summary)
 
     # TODO evaluation
