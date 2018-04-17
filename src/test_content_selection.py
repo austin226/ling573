@@ -2,10 +2,17 @@
 
 import unittest
 from content_selection import ContentSelector
+from sentence_extraction import SentenceExtractor
+from sentence_simplification import SentenceSimplifier
+from sentence_segmentation import SentenceSegmenter
 
 class ContentSelectorTest(unittest.TestCase):
     def setUp(self):
-        self.content_selector = ContentSelector()
+        extractor = SentenceExtractor()
+        simplifier = SentenceSimplifier()
+        segmenter = SentenceSegmenter()
+
+        self.content_selector = ContentSelector(extractor, simplifier, segmenter)
 
     def test_basic_order(self):
         sentences = [

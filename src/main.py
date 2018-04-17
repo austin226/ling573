@@ -5,7 +5,10 @@ import sys
 from content_selection import ContentSelector
 from doc_reader import DocReader
 from info_ordering import InfoOrder
+from sentence_extraction import SentenceExtractor
 from sentence_realization import SentenceRealizer
+from sentence_simplification import SentenceSimplifier
+from sentence_segmentation import SentenceSegmenter
 from summarizer import Summarizer
 
 def print_sentences(output_base_dir, topic_id, sentences):
@@ -13,6 +16,21 @@ def print_sentences(output_base_dir, topic_id, sentences):
     with open(output_filename, 'w') as out_f:
         for sentence in sentences:
             out_f.write(sentence + '\n')
+
+def build_content_selector():
+    extractor = SentenceExtractor()
+    simplifier = SentenceSimplifier()
+    segmenter = SentenceSegmenter()
+
+    content_selector = ContentSelector(extractor, simplifier, segmenter)
+    return content_selector
+
+def build_summarizer():
+    content_selector = build_content_selector()
+    info_order = InfoOrder()
+    sentence_realizer = SentenceRealizer()
+    summarizer = Summarizer(content_selector, info_order, sentence_realizer)
+    return summarizer
 
 if __name__ == '__main__':
     # Input to the script is an XML file name
@@ -23,11 +41,7 @@ if __name__ == '__main__':
     output_base_dir = sys.argv[2]
 
     doc_reader = DocReader()
-
-    content_selector = ContentSelector()
-    info_order = InfoOrder()
-    sentence_realizer = SentenceRealizer()
-    summarizer = Summarizer(content_selector, info_order, sentence_realizer)
+    summarizer = build_summarizer()
 
     docsets = doc_reader.read_docs(input_xml_filename)
     for topic_id, sentences in docsets.items():
