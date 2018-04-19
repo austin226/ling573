@@ -1,15 +1,15 @@
+#!/usr/bin/python3
 import fileinput
 import sys
 
 
-#input file format is expected to be the following for each line:
+#input object is expected to have the following for each line:
 #date sequence 'sentence' with date formatted as YYYYMMDDHHSS; sequence represents intra-document sentence ordering
 #when one document has multiple sentences. sentence represents the actual sentence
 
 #output file format is the following for each line:
 # sentence
 
-#!/usr/bin/python3
 
 class InfoOrder:
     '''
@@ -18,6 +18,7 @@ class InfoOrder:
     '''
 
     def process(self, sentences):
+      
         sentencesList = list()
         sentencesOutput = list()
         
