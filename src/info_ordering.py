@@ -19,9 +19,10 @@ class InfoOrder:
 
     def process(self, sentences):
         sentencesList = list()
-        outputFile = open('sentences.ordered', 'w')
+        sentencesOutput = list()
+        
         #Add sentences to the list
-        for line in fileinput.input(sys.argv[1]):
+        for line in sentences:
             items = line.split('#')
             dateSeq = items[0] + items[1]
             sentencesList.append((dateSeq,items[2]))
@@ -31,6 +32,6 @@ class InfoOrder:
         sentencesList.sort(key=lambda tup: tup[0])
 
         for sentence in sentencesList:
-            outputFile.write(sentence[1])
-
-        outputFile.close()
+            sentencesOutput.append(sentence)
+            
+        return sentencesOutput
