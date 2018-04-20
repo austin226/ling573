@@ -144,7 +144,7 @@ class DocReader:
         raise ValueError('doc_id "{}" is invalid'.format(doc_id))
 
     def parse_doc(self, path, format_name, doc_id):
-        if format_name == 'AQUAINT':
+        if format_name == 'AQUAINT' or format_name == 'ENG-GW':
             # SGML format
             with open(path, 'r') as doc_file:
                 sgml = doc_file.read()
@@ -154,7 +154,7 @@ class DocReader:
             parser.feed(sgml)
             return parser.get_output()
 
-        else: # AQUAINT-2
+        elif format_name == 'AQUAINT-2':
             # XML format
             if path in self.xml_cache:
                 tree = self.xml_cache[path]
@@ -189,6 +189,9 @@ class DocReader:
                 'paragraphs': paragraphs
             }
             return doc_out
+
+        else:
+            raise ValueError('Unknown format: "{}"'.format(format_name))
 
     def read_docs(self, input_xml_filename, max_docs = None):
         '''
