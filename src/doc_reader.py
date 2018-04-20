@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 import re
-from lxml import etree as ET
+import sys
 
+from lxml import etree as ET
 from html.parser import HTMLParser, HTMLParseError
 
 class Aquaint1Parser(HTMLParser):
@@ -158,8 +159,10 @@ class DocReader:
 
             try:
                 parser.feed(sgml)
-            except HTMLParseError:
-                print('Error parsing document "{}"'.format(doc_id))
+            except HTMLParseError as e:
+                print('Error parsing document "{}" from file "{}" (format: {})'.format(doc_id, path, format_name), file=sys.stderr)
+                print(e, file=sys.stderr)
+                # Skip this file
                 return None
             return parser.get_output()
 
@@ -234,9 +237,8 @@ class DocReader:
                     doc_contents = self.parse_doc(doc_path, doc_format, doc_id)
                     parsed_doc_count += 1
                 except FileNotFoundError:
+                    print('Error loading file "{}"'.format(doc_path), file=sys.stderr)
                     # Skip this file
-                    print('Error loading file "{}"'.format(doc_path))
-                    # TODO maybe log an error somewhere
                     continue
                 docs_out[doc_id] = doc_contents
             topics_out.append({
