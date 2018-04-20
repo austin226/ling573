@@ -44,9 +44,16 @@ if __name__ == '__main__':
     doc_reader = DocReader('/dropbox/17-18/573/AQUAINT', '/dropbox/17-18/573/AQUAINT-2')
     summarizer = build_summarizer()
 
-    docsets = doc_reader.read_docs(input_xml_filename)
-    for topic_id, sentences in docsets.items():
-        summary = summarizer.summarize(sentences)
+    topics_data = doc_reader.read_docs(input_xml_filename)['topics']
+    for topic in topics_data:
+        topic_id = topic['id']
+        topic_title = topic['title']
+        topic_category = topic['category']
+        docset = topic['docset']
+
+        # TODO ---- make summarize() accept a docset insetad of a list of strings
+        summary = summarizer.summarize(docset)
+
         print_sentences(output_base_dir, topic_id, summary)
 
     # TODO evaluation
