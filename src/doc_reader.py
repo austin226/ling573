@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import re
-import xml.etree.ElementTree as ET
+from lxml import etree as ET
 
 from html.parser import HTMLParser
 
@@ -159,7 +159,7 @@ class DocReader:
             datelines = [d.text.strip() for d in doc.findall('DATELINE')]
 
             text = doc.find('TEXT')
-            if text:
+            if text is not None:
                 paras = text.findall('P')
                 if len(paras):
                     paragraphs = [p.text.strip() for p in paras]
