@@ -3,7 +3,7 @@
 import re
 from lxml import etree as ET
 
-from html.parser import HTMLParser
+from html.parser import HTMLParser, HTMLParseError
 
 class Aquaint1Parser(HTMLParser):
     # See document type definition at https://catalog.ldc.upenn.edu/docs/LDC2002T31/
@@ -151,7 +151,12 @@ class DocReader:
             # TODO Parse only a subset of the file containing the relevant doc
             parser = Aquaint1Parser(convert_charrefs=True)
             parser.set_doc_id(doc_id)
-            parser.feed(sgml)
+
+            try:
+                parser.feed(sgml)
+            except HTMLParseError:
+                print('Error parsing document "{}"'.format(doc_id))
+                return None
             return parser.get_output()
 
         elif format_name == 'AQUAINT-2':
@@ -224,6 +229,7 @@ class DocReader:
                     parsed_doc_count += 1
                 except FileNotFoundError:
                     # Skip this file
+                    print('Error loading file "{}"'.format(doc_path))
                     # TODO maybe log an error somewhere
                     continue
                 docs_out[doc_id] = doc_contents
