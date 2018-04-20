@@ -80,6 +80,8 @@ class Aquaint1Parser(HTMLParser):
                 self.reading_text = False
 
 class DocReader:
+    xml_cache = {}
+
     def __init__(self, aq_root, aq2_root):
         '''
         aq_root: AQUAINT root path
@@ -145,7 +147,11 @@ class DocReader:
 
         else: # AQUAINT-2
             # XML format
-            tree = ET.parse(path)
+            if path in self.xml_cache:
+                tree = self.xml_cache[path]
+            else:
+                tree = ET.parse(path)
+                self.xml_cache[path] = tree
             docstream = tree.getroot()
 
             # Get doc element by ID
