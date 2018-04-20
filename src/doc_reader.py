@@ -31,7 +31,11 @@ class Aquaint1Parser(HTMLParser):
     # Override HTMLParser methods
 
     def handle_starttag(self, tag, attrs):
-        if tag == 'docno':
+        if tag == 'doc':
+            for name, value in attrs:
+                if name == 'id' and value == 'doc_id':
+                    self.on_correct_document = True
+        elif tag == 'docno':
             self.reading_docno = True
         elif self.on_correct_document:
             if tag == 'doctype':
@@ -197,6 +201,8 @@ class DocReader:
 
         else:
             raise ValueError('Unknown format: "{}"'.format(format_name))
+
+    #def clip_sgml(self, sgml, doc_id):
 
     def read_docs(self, input_xml_filename, max_docs = None):
         '''
