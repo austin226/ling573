@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE TACtaskdata [
+
+<!-- ======================================================================
+      TAC 2010 Guided Summarization task data definition
+
+      Written 2010-06-18 by Karolina Owczarzak <karolina.owczarzak@nist.gov>
+     ====================================================================== -->
+
+    <!ELEMENT TACtaskdata  (topic+)           >
+    <!ELEMENT topic       (title, docsetA, docsetB) >
+    <!ELEMENT title       (#PCDATA)           >
+    <!ELEMENT docsetA     (doc+)              >
+    <!ELEMENT docsetB     (doc+)              >
+    <!ELEMENT doc          EMPTY              >		       
+
+    <!ATTLIST TACtaskdata
+                      year    CDATA              #REQUIRED
+		      track   (SUMMARIZATION)    #REQUIRED
+                      task    (GUIDED)           #REQUIRED
+		      dataset (SAMPLE|TEST)      #REQUIRED >
+
+    <!ATTLIST topic  id       ID    #REQUIRED 
+		     category CDATA #REQUIRED >
+
+    <!ATTLIST docsetA  id     ID    #REQUIRED >
+
+    <!ATTLIST docsetB  id     ID    #REQUIRED >
+
+    <!ATTLIST doc      id     CDATA #REQUIRED >   
+
+
+<!-- ====================================================================== -->
+]>
+
+<TACtaskdata year="2010" track="SUMMARIZATION" task="GUIDED"  dataset="TEST">
+
+<topic id = "D1003A" category = "4">
+
+	<title> Giant Panda </title>
+
+	<docsetA id = "D1003A-A">
+		<doc id = "XIN_ENG_20041019.0235" />
+		<doc id = "AFP_ENG_20050128.0218" />
+		<doc id = "XIN_ENG_20050210.0029" />
+		<doc id = "APW_ENG_20061002.1126" />
+	</docsetA>
+
+	<docsetB id = "D1003A-B">
+		<doc id = "XIN_ENG_20050403.0018" />
+	</docsetB>
+
+</topic>
+
+</TACtaskdata>
