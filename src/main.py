@@ -40,8 +40,8 @@ if __name__ == '__main__':
     input_xml_filename = sys.argv[1]
     output_base_dir = sys.argv[2]
 
-    # Initialize document reader with AQUAINT and AQUAINT-2 root paths
-    doc_reader = DocReader('/dropbox/17-18/573/AQUAINT', '/dropbox/17-18/573/AQUAINT-2')
+    # Initialize document reader with AQUAINT, AQUAINT-2, and ENG-GW root paths
+    doc_reader = DocReader('/dropbox/17-18/573/AQUAINT', '/dropbox/17-18/573/AQUAINT-2', '/dropbox/17-18/573/ENG-GW')
     summarizer = build_summarizer()
 
     topics_data = doc_reader.read_docs(input_xml_filename)['topics']

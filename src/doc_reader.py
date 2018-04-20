@@ -82,14 +82,16 @@ class Aquaint1Parser(HTMLParser):
 class DocReader:
     xml_cache = {}
 
-    def __init__(self, aq_root, aq2_root):
+    def __init__(self, aq_root, aq2_root, eng_gw_root):
         '''
         aq_root: AQUAINT root path
         aq2_root: AQUAINT-2 root path
+        eng_gw_root: ENG-GW root path
         '''
 
         self.aq_root = aq_root
         self.aq2_root = aq2_root
+        self.eng_gw_root = eng_gw_root
 
         aq_regex = '([A-Z]+)(\d{4})(\d{4})\.(\d{4})'
         self.aq_pattern = re.compile(aq_regex, re.IGNORECASE)
@@ -128,6 +130,13 @@ class DocReader:
             # ('XIN', 'ENG', '2005', '0415', '0040')
 
             publisher, lang, year, volume, doc_num = match.groups()
+
+            if int(year) > 2005:
+                # ENG-GW, not AQUAINT-2
+                # Example: APW_ENG_20061002.1245 is located at
+                # {eng_gw_root}/data/apw_eng/apw_eng_200610.gz
+                path = '{}/data/{}_{}/{}_{}_{}{}.gz'.format(self.eng_gw_root, publisher.lower(), lang.lower(), publisher.lower(), lang.lower(), year, volume[:2])
+                return (path, 'ENG-GW')
 
             path = '{}/data/{}_{}/{}_{}_{}{}.xml'.format(self.aq2_root, publisher.lower(), lang.lower(), publisher.lower(), lang.lower(), year, volume[:2])
             return (path, 'AQUAINT-2')

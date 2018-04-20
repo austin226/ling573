@@ -9,14 +9,16 @@ class DocReaderTest(unittest.TestCase):
     def setUp(self):
         self.aq_root = '/dropbox/17-18/573/AQUAINT'
         self.aq2_root = '/dropbox/17-18/573/AQUAINT-2'
-        self.doc_reader = DocReader(self.aq_root, self.aq2_root)
+        self.eng_gw_root = '/dropbox/17-18/573/ENG-GW'
+        self.doc_reader = DocReader(self.aq_root, self.aq2_root, self.eng_gw_root)
 
     def test_resolve_path(self):
         test_data = [
             ('XIE19990529.0166', (self.aq_root+'/xie/1999/19990529_XIN_ENG', 'AQUAINT')),
             ('APW19990421.0284', (self.aq_root+'/apw/1999/19990421_APW_ENG', 'AQUAINT')),
             ('NYT19990421.0284', (self.aq_root+'/nyt/1999/19990421_NYT', 'AQUAINT')),
-            ('XIN_ENG_20050415.0040 ', (self.aq2_root+'/data/xin_eng/xin_eng_200504.xml', 'AQUAINT-2')),
+            ('XIN_ENG_20050415.0040', (self.aq2_root+'/data/xin_eng/xin_eng_200504.xml', 'AQUAINT-2')),
+            ('APW_ENG_20061002.1245', (self.eng_gw_root+'/data/apw_eng/apw_eng_200610.gz', 'ENG-GW')),
         ]
         for doc_id, path in test_data:
             with self.subTest():
