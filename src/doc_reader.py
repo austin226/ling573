@@ -151,9 +151,7 @@ class DocReader:
     def parse_doc(self, path, format_name, doc_id):
         if format_name == 'AQUAINT' or format_name == 'ENG-GW':
             # SGML format
-            with open(path, 'r') as doc_file:
-                sgml = doc_file.read()
-            # TODO Parse only a subset of the file containing the relevant doc
+            sgml = self.clip_sgml(path, doc_id, format_name)
             parser = Aquaint1Parser(convert_charrefs=True)
             parser.set_doc_id(doc_id)
 
@@ -205,7 +203,33 @@ class DocReader:
         else:
             raise ValueError('Unknown format: "{}"'.format(format_name))
 
-    #def clip_sgml(self, sgml, doc_id):
+    def clip_sgml(self, path, doc_id, format_name):
+        output_lines = []
+        with open(path, 'r') as f:
+            reading_doc = False
+            lines = f.readlines()
+            if format_name == 'AQUAINT':
+                for i, line in enumerate(lines):
+                    if line.startswith('<DOCNO>') and doc_id in line:
+                        reading_doc = True
+                        output_lines.append(lines[i-1])
+                    elif line.startswith('</DOCNO>'):
+                        output_lines.extend(lines[i:i+1])
+                        break
+                    if reading_doc:
+                        output_lines.append(line)
+            elif format_name == 'ENG-GW':
+                for i, line in enumerate(lines):
+                    if line.startswith('<DOC') and doc_id in line:
+                        reading_doc = True
+                    elif line.startswith('</DOC>'):
+                        output_lines.append(line)
+                        break
+                    if reading_doc:
+                        output_lines.append(line)
+            else:
+                raise ValueError('Unknown format: "{}"'.format(format_name))
+            return ("\n").join(output_lines)
 
     def read_docs(self, input_xml_filename, max_docs = None):
         '''
