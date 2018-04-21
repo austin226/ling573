@@ -151,7 +151,6 @@ class DocReader:
     def parse_doc(self, path, format_name, doc_id):
         if format_name == 'AQUAINT' or format_name == 'ENG-GW':
             # SGML format
-            # TODO Parse only a subset of the file containing the relevant doc
             sgml = self.clip_sgml(path, doc_id, format_name)
             parser = Aquaint1Parser(convert_charrefs=True)
             parser.set_doc_id(doc_id)
