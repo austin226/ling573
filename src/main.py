@@ -19,7 +19,7 @@ def print_sentences(output_base_dir, topic_id, sentences):
             out_f.write(sentence + '\n')
 
 def build_content_selector():
-    extractor = SentenceExtractor()
+    extractor = SentenceExtractor(5) # max_sent = 5
     simplifier = SentenceSimplifier()
     segmenter = SentenceSegmenter()
 
@@ -62,7 +62,7 @@ if __name__ == '__main__':
         docset = topic['docset']
 
         # TODO ---- make summarize() accept a docset insetad of a list of strings
-        summary = summarizer.summarize(docset)
+        summary = summarizer.summarize(topic_id, docset)
 
         print_sentences(output_base_dir, topic_id, summary)
 

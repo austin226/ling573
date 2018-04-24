@@ -11,8 +11,8 @@ class ContentSelector:
         self.simplifier = simplifier
         self.segmenter = segmenter
 
-    def select(self, sentences):
-        extracted = self.extractor.process(sentences)
-        simplified = self.simplifier.process(extracted)
+    def select(self, topic_id):
+        extracted = self.extractor.process(topic_id)
+        simplified = [self.simplifier.process(e) for e in extracted]
         segmented = self.segmenter.process(simplified)
         return segmented
