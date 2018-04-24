@@ -29,7 +29,7 @@ class SentenceExtractorTest(unittest.TestCase):
         cluster = 'GA3'
         doc_id_list, sent_idx_list, sentences = self.extractor.process(cluster)
         print(doc_id_list, sent_idx_list, sentences)
-        self.assertTrue(len(sentences) == 5)
+        self.assertTrue(len(sentences) == len(doc_id_list) == len(sent_idx_list) == 5)
 
 if __name__ == '__main__':
     unittest.main()

@@ -14,13 +14,28 @@ class InfoOrderTest(unittest.TestCase):
 
     def test_basic_order(self):
         doc_id_list = ['XIN_ENG_20050210.0029','NYT19990424.0231']
+        sent_idx_list = [1, 1]
         sentences = [
             'This is the second sentence.',
             'This is the first sentence.',
         ]
-        processed = self.info_ord.process(doc_id_list, sentences)
+        processed = self.info_ord.process(doc_id_list, sent_idx_list, sentences)
 
         self.assertEqual([sentences[1], sentences[0]], processed)
+
+    def test_mult_sent_per_doc(self):
+        doc_id_list = [
+            'XIN_ENG_20050210.0029',
+            'XIN_ENG_20050210.0029',
+            'NYT19990424.0231',
+            'XIN_ENG_20050210.0029',
+        ]
+        sent_idx_list = [3, 1, 1, 2]
+        sentences = ['a', 'b', 'c', 'd']
+
+        processed = self.info_ord.process(doc_id_list, sent_idx_list, sentences)
+
+        self.assertEqual(['c', 'b', 'd', 'a'], processed)
 
 if __name__ == '__main__':
     unittest.main()

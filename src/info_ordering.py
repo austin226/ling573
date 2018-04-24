@@ -18,7 +18,7 @@ class InfoOrder:
     logical order. (e.g., chronological or by importance)
     '''
 
-    def process(self, doc_id_list, sentences):
+    def process(self, doc_id_list, sent_idx_list, sentences):
         '''
         doc_id_list: format is like "XIN_ENG_20050210.0029" or "NYT19990424.0231"
         sentences: list of string sentences.
@@ -34,7 +34,8 @@ class InfoOrder:
         #Add sentences to the list
         for i, line in enumerate(sentences):
             date_num_str = numeric_date_list[i]
-            sent_idx = '0000' # TODO order within doc
+            # Format idx as a 4-digit numeric string
+            sent_idx = '{:0>4d}'.format(sent_idx_list[i])
             dateSeq = date_num_str + sent_idx
             sentencesList.append((dateSeq,line))
 
