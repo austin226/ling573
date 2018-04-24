@@ -169,7 +169,11 @@ class DocReader:
             if path in self.xml_cache:
                 tree = self.xml_cache[path]
             else:
-                tree = ET.parse(path)
+                try:
+                    tree = ET.parse(path)
+                except ET.XMLSyntaxError:
+                    print('Error parsing XML from file {}, skipping'.format(path), file=sys.stderr)
+                    return None
                 self.xml_cache[path] = tree
             docstream = tree.getroot()
 
