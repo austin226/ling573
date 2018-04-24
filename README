@@ -1,0 +1,14 @@
+# Usage
+    ```
+    python3 src/main.py TOPICS_XML_FILE OUTPUT_DIR
+    ```
+
+## Example:
+    ```
+    python3 src/main.py /dropbox/17-18/573/Data/Documents/devtest/GuidedSumm10_test_topics.xml outputs/D2/
+    ```
+
+# Notes
+- Script must be invoked from the base directory of this project.
+- The script will log to stdout and stderr, but all summaries will be placed in the OUTPUT_DIR
+- Script will write intermediate files in the var/ directory.
