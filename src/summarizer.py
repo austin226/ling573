@@ -38,6 +38,9 @@ class Summarizer:
         os.chdir(init_dir)
 
     def summarize(self, topic_id, docset):
+        if len(docset) == 0:
+            return []
+
         self._build_cluster(topic_id, docset)
 
         doc_id_list, sent_idx_list, sentences, simplified_sentences  = self.content_selector.select(topic_id)

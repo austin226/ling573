@@ -65,8 +65,8 @@ if __name__ == '__main__':
         docset = topic['docset']
 
         print('Summarizing topic "{}" (topic {} of {}, {} documents)...'.format(topic_title, i+1, len(topics_data), len(docset)))
-        summary = summarizer.summarize(topic_id, docset)
 
+        summary = summarizer.summarize(topic_id, docset)
         print_sentences(output_base_dir, topic_id, summary)
 
     print('Done.')
