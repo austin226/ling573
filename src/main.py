@@ -54,15 +54,19 @@ if __name__ == '__main__':
     doc_reader = DocReader('/dropbox/17-18/573/AQUAINT', '/dropbox/17-18/573/AQUAINT-2', '/dropbox/17-18/573/ENG-GW')
     summarizer = build_summarizer()
 
+    print('Reading in documents from "{}"...'.format(input_xml_filename))
     topics_data = doc_reader.read_docs(input_xml_filename)['topics']
-    for topic in topics_data:
+    for i, topic in enumerate(topics_data):
         topic_id = topic['id']
         topic_title = topic['title']
         topic_category = topic['category']
         docset = topic['docset']
 
+        print('Summarizing topic "{}" (topic {} of {}, {} documents)...'.format(topic_title, i+1, len(topics_data), len(docset)))
         summary = summarizer.summarize(topic_id, docset)
 
         print_sentences(output_base_dir, topic_id, summary)
+
+    print('Done.')
 
     # TODO evaluation
