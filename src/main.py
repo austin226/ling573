@@ -68,5 +68,3 @@ if __name__ == '__main__':
         print_sentences(output_base_dir, topic_id, summary)
 
     print('Done.')
-
-    # TODO evaluation
