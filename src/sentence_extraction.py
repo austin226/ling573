@@ -14,11 +14,21 @@ class SentenceExtractor:
         """Calls upon MEAD to pick the X best sentences (max_sent = X) in cluster Y. Returns sentences in list form."""
         perl_script = "/mnt/dropbox/17-18/573/code/mead/bin/mead.pl"
         rc_filename = os.path.dirname(os.path.realpath(__file__)) + '/.meadrc'
-        command = '{} -rc {} -a {} {} 2>/dev/null'.format(perl_script, rc_filename, self.max_sent, cluster)
+
         # TODO use a more secure method than getoutput
-        perl_output = subprocess.getoutput(command)
-        sentences = self.parse_sentences(perl_output)
-        return sentences
+        extract_command = '{} -extract -rc {} -a {} {} 2>/dev/null'.format(perl_script, rc_filename, self.max_sent, cluster)
+        summary_command = '{} -rc {} -a {} {} 2>/dev/null'.format(perl_script, rc_filename, self.max_sent, cluster)
+
+        extract = subprocess.getoutput(extract_command)
+        doc_id_list = self.parse_doc_id_list(extract)
+
+        summary = subprocess.getoutput(summary_command)
+        sentences = self.parse_sentences(summary)
+        return doc_id_list, sentences
+
+    def parse_doc_id_list(self, extract):
+        # TODO
+        return [1, 2, 3]
 
     def parse_sentences(self, perl_output):
         """

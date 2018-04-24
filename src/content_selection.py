@@ -12,7 +12,8 @@ class ContentSelector:
         self.segmenter = segmenter
 
     def select(self, topic_id):
-        extracted = self.extractor.process(topic_id)
+        doc_id_list, extracted = self.extractor.process(topic_id)
+        print(doc_id_list, extracted)
         simplified = [self.simplifier.process(e) for e in extracted]
         segmented = [self.segmenter.process(s) for s in simplified]
 
