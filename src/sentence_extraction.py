@@ -41,7 +41,7 @@ class SentenceExtractor:
 
         for s in tree:
             doc_id_list.append(s.get('DID'))
-            sent_idx_list.append(s.get('SNO'))
+            sent_idx_list.append(int(s.get('SNO')))
         return doc_id_list, sent_idx_list
 
     def parse_sentences(self, perl_output):

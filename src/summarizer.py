@@ -42,5 +42,5 @@ class Summarizer:
 
         doc_id_list, sent_idx_list, selected_sentences = self.content_selector.select(topic_id)
         ordered_sentences = self.info_order.process(doc_id_list, sent_idx_list, selected_sentences)
-        #realized_sentences = self.sentence_realizer.process(sentences)
-        #return realized_sentences
+        realized_sentences = self.sentence_realizer.process(ordered_sentences)
+        return realized_sentences
