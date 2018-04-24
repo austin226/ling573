@@ -16,7 +16,7 @@ def print_sentences(output_base_dir, topic_id, sentences):
     id_part1 = topic_id[:-1]
     id_part2 = topic_id[-1:]
     group_number = 7 # Canvas team number
-    output_filename = '{}-A.M.100.{}.{}'.format(id_part1, id_part2, group_number)
+    output_filename = '{}/{}-A.M.100.{}.{}'.format(output_base_dir, id_part1, id_part2, group_number)
 
     with open(output_filename, 'w') as out_f:
         for sentence in sentences:
