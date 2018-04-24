@@ -11,4 +11,12 @@
 # Notes
 - Script must be invoked from the base directory of this project.
 - The script will log to stdout and stderr, but all summaries will be placed in the OUTPUT_DIR
-- Script will write intermediate files in the var/ directory.
+- Script will write intermediate files in the var/ directoryhgt
+
+# ROUGE Evaluation
+    ```
+    /dropbox/17-18/573/code/ROUGE/ROUGE-1.5.5.pl \
+      -e /dropbox/17-18/573/code/ROUGE/data \
+      -a -n 4 -x -m -c 95 -r 1000 -f A -p 0.5 -t 0 -l 100 -s \
+      -d src/ROUGE.conf.xml
+    ```
