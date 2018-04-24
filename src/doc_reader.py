@@ -169,7 +169,11 @@ class DocReader:
             if path in self.xml_cache:
                 tree = self.xml_cache[path]
             else:
-                tree = ET.parse(path)
+                try:
+                    tree = ET.parse(path)
+                except ET.XMLSyntaxError:
+                    print('Error parsing XML from file {}, skipping'.format(path), file=sys.stderr)
+                    return None
                 self.xml_cache[path] = tree
             docstream = tree.getroot()
 
@@ -241,9 +245,13 @@ class DocReader:
 
         tree = ET.parse(input_xml_filename)
         tac_task_data = tree.getroot()
+        num_topics = len(tac_task_data)
 
         topics_out = []
+        i = 0
         for topic in tac_task_data:
+            i += 1
+            print('Parsing docset {} of {}...'.format(i, num_topics))
             topic_id = topic.get('id')
             topic_category = topic.get('category')
             topic_title = topic.find('title').text.strip()

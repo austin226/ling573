@@ -7,14 +7,35 @@ class InfoOrderTest(unittest.TestCase):
     def setUp(self):
         self.info_ord = InfoOrder()
 
-    def test_basic_order(self):
-        sentences = [
-                'This is the first sentence.',
-                'This is the second sentence.',
-        ]
-        processed = self.info_ord.process(sentences)
+    def test_to_numeric_list(self):
+        doc_id_list = ['NYT19990424.0231','XIN_ENG_20050210.0029']
+        numeric_list = ['199904240231', '200502100029']
+        self.assertEqual(numeric_list, self.info_ord.to_numeric_list(doc_id_list))
 
-        self.assertEqual(sentences, processed)
+    def test_basic_order(self):
+        doc_id_list = ['XIN_ENG_20050210.0029','NYT19990424.0231']
+        sent_idx_list = [1, 1]
+        sentences = [
+            'This is the second sentence.',
+            'This is the first sentence.',
+        ]
+        processed = self.info_ord.process(doc_id_list, sent_idx_list, sentences)
+
+        self.assertEqual([sentences[1], sentences[0]], processed)
+
+    def test_mult_sent_per_doc(self):
+        doc_id_list = [
+            'XIN_ENG_20050210.0029',
+            'XIN_ENG_20050210.0029',
+            'NYT19990424.0231',
+            'XIN_ENG_20050210.0029',
+        ]
+        sent_idx_list = [3, 1, 1, 2]
+        sentences = ['a', 'b', 'c', 'd']
+
+        processed = self.info_ord.process(doc_id_list, sent_idx_list, sentences)
+
+        self.assertEqual(['c', 'b', 'd', 'a'], processed)
 
 if __name__ == '__main__':
     unittest.main()
