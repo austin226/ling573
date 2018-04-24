@@ -22,16 +22,27 @@ class SentenceExtractor:
         summary_command = '{} -rc {} -a {} {} 2>/dev/null'.format(perl_script, rc_filename, self.max_sent, cluster)
 
         extract = subprocess.getoutput(extract_command)
-        doc_id_list = self.parse_doc_id_list(extract)
+        doc_id_list, sent_idx_list = self.parse_doc_id_list(extract)
 
         summary = subprocess.getoutput(summary_command)
         sentences = self.parse_sentences(summary)
-        return doc_id_list, sentences
+        return doc_id_list, sent_idx_list, sentences
 
     def parse_doc_id_list(self, extract):
+        '''
+        Returns (doc_id_list, sent_idx_list)
+        where doc_id_list is an ordered list of document IDs (one per sentence),
+        and sent_idx_list is each sentence's index within that document
+        '''
         parser = ET.XMLParser(dtd_validation=False, encoding='utf-8')
         tree = ET.fromstring(extract.encode('utf-8'), parser)
-        return [s.get('DID') for s in tree]
+        doc_id_list = []
+        sent_idx_list = []
+
+        for s in tree:
+            doc_id_list.append(s.get('DID'))
+            sent_idx_list.append(s.get('SNO'))
+        return doc_id_list, sent_idx_list
 
     def parse_sentences(self, perl_output):
         """

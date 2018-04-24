@@ -27,8 +27,8 @@ class SentenceExtractorTest(unittest.TestCase):
         # For testing purposes, instantiate an extractor and run
         # on the default cluster (called GA3) available in the mead/data directory.
         cluster = 'GA3'
-        doc_id_list, sentences = self.extractor.process(cluster)
-        print(doc_id_list, sentences)
+        doc_id_list, sent_idx_list, sentences = self.extractor.process(cluster)
+        print(doc_id_list, sent_idx_list, sentences)
         self.assertTrue(len(sentences) == 5)
 
 if __name__ == '__main__':
