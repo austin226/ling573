@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import os
 import sys
 
 from content_selection import ContentSelector
@@ -32,11 +33,20 @@ def build_summarizer():
     summarizer = Summarizer(content_selector, info_order, sentence_realizer)
     return summarizer
 
+def init_dirs():
+    # Create temp directories for intermediate files
+    tmp_dirs = ['docs', 'docsets']
+    for d in tmp_dirs:
+        os.makedirs('var/{}/'.format(d), exist_ok=True)
+
 if __name__ == '__main__':
     # Input to the script is an XML file name
     if len(sys.argv) < 3:
         print('Usage: {} input_xml_filename output_base_dir'.format(sys.argv[0]))
         exit()
+
+    init_dirs()
+
     input_xml_filename = sys.argv[1]
     output_base_dir = sys.argv[2]
 

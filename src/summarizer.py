@@ -11,7 +11,15 @@ class Summarizer:
         self.info_order = info_order
         self.sentence_realizer = sentence_realizer
 
-    def summarize(self, sentences):
+    def summarize(self, docset):
+        output_dir = 'var/docs/'
+        for doc_id, doc_info in docset.items():
+            output_filename = 'var/docs/{}'.format(doc_id)
+            paragraphs = doc_info['paragraphs']
+            with open(output_filename, 'w') as f:
+                for p in paragraphs:
+                    f.write(p + '\n')
+
         selected_sentences = self.content_selector.select(sentences)
         ordered_sentences = self.info_order.process(selected_sentences)
         realized_sentences = self.sentence_realizer.process(sentences)

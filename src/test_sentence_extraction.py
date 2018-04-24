@@ -14,6 +14,7 @@ class SentenceExtractorTest(unittest.TestCase):
         cluster = 'GA3'
         max_sent = 5
         output = self.extractor.process(cluster, max_sent)
+        print(output)
         self.assertTrue(len(output) == 5)
 
 if __name__ == '__main__':
