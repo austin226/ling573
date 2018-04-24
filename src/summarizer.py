@@ -23,7 +23,6 @@ class Summarizer:
         os.makedirs(topic_dir, exist_ok=True)
         for doc_id, doc_info in docset.items():
             output_filename = '{}/{}'.format(topic_dir, doc_id)
-            print(output_filename)
             paragraphs = doc_info['paragraphs']
             with open(output_filename, 'w') as f:
                 for p in paragraphs:
@@ -42,6 +41,6 @@ class Summarizer:
         self._build_cluster(topic_id, docset)
 
         doc_id_list, selected_sentences = self.content_selector.select(topic_id)
-        #ordered_sentences = self.info_order.process(selected_sentences)
+        ordered_sentences = self.info_order.process(doc_id_list, selected_sentences)
         #realized_sentences = self.sentence_realizer.process(sentences)
         #return realized_sentences
