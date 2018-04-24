@@ -20,4 +20,4 @@ class ContentSelector:
         sentences = []
         for s in simplified:
             sentences.extend(self.segmenter.process(s))
-        return sentences
+        return doc_id_list, sentences

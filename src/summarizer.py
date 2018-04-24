@@ -41,7 +41,7 @@ class Summarizer:
     def summarize(self, topic_id, docset):
         self._build_cluster(topic_id, docset)
 
-        selected_sentences = self.content_selector.select(topic_id)
+        doc_id_list, selected_sentences = self.content_selector.select(topic_id)
         #ordered_sentences = self.info_order.process(selected_sentences)
         #realized_sentences = self.sentence_realizer.process(sentences)
         #return realized_sentences
