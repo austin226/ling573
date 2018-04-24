@@ -12,7 +12,11 @@ class SentenceRealizerTest(unittest.TestCase):
                 'This is the first sentence.',
                 'This is the second sentence.',
         ]
-        processed = self.sr.process(sentences)
+        simplified = [
+                'first sentence',
+                'second sentence'
+        ]
+        processed = self.sr.process(sentences, simplified)
 
         self.assertEqual(sentences, processed)
 

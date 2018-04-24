@@ -61,7 +61,6 @@ if __name__ == '__main__':
         topic_category = topic['category']
         docset = topic['docset']
 
-        # TODO ---- make summarize() accept a docset insetad of a list of strings
         summary = summarizer.summarize(topic_id, docset)
 
         print_sentences(output_base_dir, topic_id, summary)
