@@ -14,5 +14,9 @@ class ContentSelector:
     def select(self, topic_id):
         extracted = self.extractor.process(topic_id)
         simplified = [self.simplifier.process(e) for e in extracted]
-        segmented = self.segmenter.process(simplified)
-        return segmented
+        segmented = [self.segmenter.process(s) for s in simplified]
+
+        sentences = []
+        for s in simplified:
+            sentences.extend(self.segmenter.process(s))
+        return sentences
