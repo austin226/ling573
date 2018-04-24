@@ -2,6 +2,8 @@
 
 from nltk.tokenize import sent_tokenize
 
+nltk.data.path.append('/home2/aalmond/nltk_data') # TODO Use punkt on Patas
+
 class SentenceSegmenter:
     """A method for converting a block of text into a list of sentences using NLTK """
 
