@@ -241,9 +241,13 @@ class DocReader:
 
         tree = ET.parse(input_xml_filename)
         tac_task_data = tree.getroot()
+        num_topics = len(tac_task_data)
 
         topics_out = []
+        i = 0
         for topic in tac_task_data:
+            i += 1
+            print('Parsing docset {} of {}...'.format(i, num_topics))
             topic_id = topic.get('id')
             topic_category = topic.get('category')
             topic_title = topic.find('title').text.strip()
