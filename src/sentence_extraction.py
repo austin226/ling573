@@ -4,6 +4,8 @@ import os
 import subprocess
 import sys
 
+from lxml import etree as ET
+
 class SentenceExtractor:
     """The Extractor uses MEAD to examine a cluster and find the list of X (=max_sent) best sentences."""
     def __init__(self, max_sent):
@@ -27,8 +29,9 @@ class SentenceExtractor:
         return doc_id_list, sentences
 
     def parse_doc_id_list(self, extract):
-        # TODO
-        return [1, 2, 3]
+        parser = ET.XMLParser(dtd_validation=False, encoding='utf-8')
+        tree = ET.fromstring(extract.encode('utf-8'), parser)
+        return [s.get('DID') for s in tree]
 
     def parse_sentences(self, perl_output):
         """
