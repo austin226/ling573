@@ -66,15 +66,21 @@ class InfoOrder:
         # For each word in the first sentence
         for synset in synsets1:
             # Get the similarity value of the most similar word in the other sentence
-            best_score = max([synset.path_similarity(ss) if synset.path_similarity(ss) != None else 0 for ss in synsets2])
-
-            # Check that the similarity could have been computed
-            if best_score is not None:
-                score += best_score
-                count += 1
+            similarity_scores = []
+            for ss in synsets2:
+                similarity = synset.path_similarity(ss)
+                if similarity is not None:
+                    similarity_scores.append(similarity)
+            if len(similarity_scores) == 0:
+                continue
+            score += max(similarity_scores)
+            count += 1
 
         # Average the values
-        score /= count
+        if count != 0:
+            score /= count
+        else:
+            score = 0
         return score
 
     #Balance out the differences in comparing A,B vs B,A
