@@ -21,7 +21,6 @@ PORT=$(grep "listening at .*:\([0-9]\+\)$" ${SERVER_LOG} | sed "s/.*[:.]//g")
 echo $PORT
 
 pip install -r ${PROJECT_ROOT}/src/requirements.txt
-## TODO main script here
 
 INPUT_XML_FILENAME="/dropbox/17-18/573/Data/Documents/devtest/GuidedSumm10_test_topics.xml"
 OUTPUT_DIR="${PROJECT_ROOT}/output/D3/"
