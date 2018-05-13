@@ -44,15 +44,17 @@ def init_dirs():
         os.makedirs('var/{}/'.format(d), exist_ok=True)
 
 if __name__ == '__main__':
-    # Input to the script is an XML file name
-    if len(sys.argv) < 3:
-        print('Usage: {} input_xml_filename output_base_dir'.format(sys.argv[0]))
+    if len(sys.argv) < 4:
+        print('Usage: {} input_xml_filename output_base_dir core_nlp_port'.format(sys.argv[0]))
         exit()
 
     init_dirs()
 
     input_xml_filename = sys.argv[1]
     output_base_dir = sys.argv[2]
+    core_nlp_port = int(sys.argv[3])
+    print("Port set to {}".format(core_nlp_port))
+    exit()
 
     os.makedirs(output_base_dir, exist_ok=True)
 
