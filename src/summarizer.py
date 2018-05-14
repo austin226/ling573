@@ -16,8 +16,9 @@ class Summarizer:
 
     def _build_cluster(self, topic_id, docset):
         """Create a MEAD cluster file at 'var/docs/{topic_id}/{topic_id}.cluster'"""
+        base_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
         init_dir = os.getcwd()
-        os.chdir('var/docs')
+        os.chdir('{}/var/docs'.format(base_dir))
 
         topic_dir = topic_id
         os.makedirs(topic_dir, exist_ok=True)
