@@ -35,6 +35,38 @@
 
 <TACtaskdata year="2010" track="SUMMARIZATION" task="GUIDED"  dataset="TEST">
 
+<topic id = "D1012C" category = "1">
+
+	<title> Helios Crash </title>
+
+	<docsetA id = "D1012C-A">
+		<doc id = "LTW_ENG_20050814.0036" />
+		<doc id = "XIN_ENG_20050814.0067" />
+		<doc id = "NYT_ENG_20050814.0102" />
+		<doc id = "XIN_ENG_20050814.0196" />
+		<doc id = "XIN_ENG_20050814.0206" />
+		<doc id = "APW_ENG_20050814.0477" />
+		<doc id = "APW_ENG_20050814.0636" />
+		<doc id = "APW_ENG_20050814.0649" />
+		<doc id = "XIN_ENG_20050815.0001" />
+		<doc id = "APW_ENG_20050815.0029" />
+	</docsetA>
+
+	<docsetB id = "D1012C-B">
+		<doc id = "APW_ENG_20050816.0017" />
+		<doc id = "APW_ENG_20050816.0019" />
+		<doc id = "APW_ENG_20050816.0020" />
+		<doc id = "NYT_ENG_20050816.0225" />
+		<doc id = "APW_ENG_20050817.0015" />
+		<doc id = "APW_ENG_20050817.0684" />
+		<doc id = "APW_ENG_20050817.0908" />
+		<doc id = "APW_ENG_20050819.0862" />
+		<doc id = "NYT_ENG_20050822.0163" />
+		<doc id = "APW_ENG_20050916.0430" />
+	</docsetB>
+
+</topic>
+
 <topic id = "D1003A" category = "4">
 
 	<title> Giant Panda </title>
