@@ -35,6 +35,38 @@
 
 <TACtaskdata year="2010" track="SUMMARIZATION" task="GUIDED"  dataset="TEST">
 
+<topic id = "D1026E" category = "3">
+
+	<title> Head Injuries </title>
+
+	<docsetA id = "D1026E-A">
+		<doc id = "AFP_ENG_20041011.0132" />
+		<doc id = "NYT_ENG_20041018.0128" />
+		<doc id = "APW_ENG_20041019.0437" />
+		<doc id = "XIN_ENG_20041102.0002" />
+		<doc id = "XIN_ENG_20041105.0010" />
+		<doc id = "NYT_ENG_20041115.0206" />
+		<doc id = "APW_ENG_20041116.0011" />
+		<doc id = "XIN_ENG_20041123.0080" />
+		<doc id = "NYT_ENG_20041124.0299" />
+		<doc id = "NYT_ENG_20041126.0117" />
+	</docsetA>
+
+	<docsetB id = "D1026E-B">
+		<doc id = "XIN_ENG_20041206.0355" />
+		<doc id = "NYT_ENG_20041220.0033" />
+		<doc id = "NYT_ENG_20041225.0123" />
+		<doc id = "XIN_ENG_20050110.0249" />
+		<doc id = "NYT_ENG_20050118.0063" />
+		<doc id = "NYT_ENG_20050128.0044" />
+		<doc id = "NYT_ENG_20050307.0128" />
+		<doc id = "XIN_ENG_20050410.0001" />
+		<doc id = "LTW_ENG_20050421.0122" />
+		<doc id = "NYT_ENG_20050610.0133" />
+	</docsetB>
+
+</topic>
+
 <topic id = "D1012C" category = "1">
 
 	<title> Helios Crash </title>
