@@ -4,6 +4,7 @@ import os
 import sys
 
 from content_selection import ContentSelector
+from coreference import CoreferenceResolver
 from doc_reader import DocReader
 from info_ordering import InfoOrder
 from sentence_extraction import SentenceExtractor
@@ -22,16 +23,17 @@ def print_sentences(output_base_dir, topic_id, sentences):
         for sentence in sentences:
             out_f.write(sentence + '\n')
 
-def build_content_selector():
+def build_content_selector(core_nlp_port):
     extractor = SentenceExtractor(5) # max_sent = 5
     simplifier = SentenceSimplifier()
     segmenter = SentenceSegmenter()
+    coreference_resolver = CoreferenceResolver(core_nlp_port)
 
     content_selector = ContentSelector(extractor, simplifier, segmenter)
     return content_selector
 
-def build_summarizer():
-    content_selector = build_content_selector()
+def build_summarizer(core_nlp_port):
+    content_selector = build_content_selector(core_nlp_port)
     info_order = InfoOrder()
     sentence_realizer = SentenceRealizer()
     summarizer = Summarizer(content_selector, info_order, sentence_realizer)
@@ -58,7 +60,7 @@ if __name__ == '__main__':
 
     # Initialize document reader with AQUAINT, AQUAINT-2, and ENG-GW root paths
     doc_reader = DocReader('/dropbox/17-18/573/AQUAINT', '/dropbox/17-18/573/AQUAINT-2', '/dropbox/17-18/573/ENG-GW')
-    summarizer = build_summarizer()
+    summarizer = build_summarizer(core_nlp_port)
 
     print('Reading in documents from "{}"...'.format(input_xml_filename))
     topics_data = doc_reader.read_docs(input_xml_filename)['topics']
