@@ -8,9 +8,8 @@ from lxml import etree as ET
 
 class SentenceExtractor:
     """The Extractor uses MEAD to examine a cluster and find the list of X (=max_sent) best sentences."""
-    def __init__(self, coreference_resolver, max_sent):
+    def __init__(self, max_sent):
         """max_sent = max sentences per cluster to select"""
-        self.coreference_resolver = coreference_resolver
         self.max_sent = max_sent
 
     def process(self, cluster):

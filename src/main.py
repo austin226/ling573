@@ -25,7 +25,7 @@ def print_sentences(output_base_dir, topic_id, sentences):
 
 def build_content_selector(core_nlp_port):
     coreference_resolver = CoreferenceResolver(core_nlp_port)
-    extractor = SentenceExtractor(coreference_resolver, 5) # max_sent = 5
+    extractor = SentenceExtractor(5) # max_sent = 5
     simplifier = SentenceSimplifier()
     segmenter = SentenceSegmenter()
 

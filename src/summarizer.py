@@ -25,6 +25,7 @@ class Summarizer:
         for doc_id, doc_info in docset.items():
             output_filename = '{}/{}'.format(topic_dir, doc_id)
             paragraphs = doc_info['paragraphs']
+            print(paragraphs)
             with open(output_filename, 'w') as f:
                 for p in paragraphs:
                     f.write(p + '\n')
