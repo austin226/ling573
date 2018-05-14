@@ -33,7 +33,9 @@ class CoreferenceResolver:
                     position = s['position']
                     startIndex = s['startIndex']
                     endIndex = s['endIndex']
-                    editedSentence = sentences[position[0] - 1].split()
+
+                    tokens = output['sentences'][position[0] - 1]['tokens']
+                    editedSentence = [t['originalText'] for t in tokens]
                     #handle multi-word replacements by removing additional words
                     if startIndex != endIndex-1:
                         editedSentence = editedSentence[0:startIndex] + editedSentence[endIndex-1:]
