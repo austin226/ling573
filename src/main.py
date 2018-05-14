@@ -29,7 +29,7 @@ def build_content_selector(core_nlp_port):
     segmenter = SentenceSegmenter()
     coreference_resolver = CoreferenceResolver(core_nlp_port)
 
-    content_selector = ContentSelector(extractor, simplifier, segmenter)
+    content_selector = ContentSelector(extractor, simplifier, segmenter, coreference_resolver)
     return content_selector
 
 def build_summarizer(core_nlp_port):
