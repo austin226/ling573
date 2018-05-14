@@ -24,12 +24,12 @@ def print_sentences(output_base_dir, topic_id, sentences):
             out_f.write(sentence + '\n')
 
 def build_content_selector(core_nlp_port):
-    extractor = SentenceExtractor(5) # max_sent = 5
+    coreference_resolver = CoreferenceResolver(core_nlp_port)
+    extractor = SentenceExtractor(coreference_resolver, 5) # max_sent = 5
     simplifier = SentenceSimplifier()
     segmenter = SentenceSegmenter()
-    coreference_resolver = CoreferenceResolver(core_nlp_port)
 
-    content_selector = ContentSelector(extractor, simplifier, segmenter, coreference_resolver)
+    content_selector = ContentSelector(extractor, simplifier, segmenter)
     return content_selector
 
 def build_summarizer(core_nlp_port):
