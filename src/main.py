@@ -53,8 +53,6 @@ if __name__ == '__main__':
     input_xml_filename = sys.argv[1]
     output_base_dir = sys.argv[2]
     core_nlp_port = int(sys.argv[3])
-    print("Port set to {}".format(core_nlp_port))
-    exit()
 
     os.makedirs(output_base_dir, exist_ok=True)
 
