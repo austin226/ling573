@@ -9,7 +9,8 @@ class Summarizer:
     that forms a summary.
     '''
 
-    def __init__(self, content_selector, info_order, sentence_realizer):
+    def __init__(self, coreference_resolver, content_selector, info_order, sentence_realizer):
+        self.coreference_resolver = coreference_resolver
         self.content_selector = content_selector
         self.info_order = info_order
         self.sentence_realizer = sentence_realizer
@@ -24,10 +25,10 @@ class Summarizer:
         os.makedirs(topic_dir, exist_ok=True)
         for doc_id, doc_info in docset.items():
             output_filename = '{}/{}'.format(topic_dir, doc_id)
-            paragraphs = doc_info['paragraphs']
-            print(paragraphs)
+            text = ' '.join(doc_info['paragraphs'])
+            sentences = self.coreference_resolver.resolve(text)
             with open(output_filename, 'w') as f:
-                for p in paragraphs:
+                for p in sentences:
                     f.write(p + '\n')
 
         # Convert sentences to docsent files using text2cluster.pl

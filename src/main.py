@@ -23,8 +23,7 @@ def print_sentences(output_base_dir, topic_id, sentences):
         for sentence in sentences:
             out_f.write(sentence + '\n')
 
-def build_content_selector(core_nlp_port):
-    coreference_resolver = CoreferenceResolver(core_nlp_port)
+def build_content_selector():
     extractor = SentenceExtractor(5) # max_sent = 5
     simplifier = SentenceSimplifier()
     segmenter = SentenceSegmenter()
@@ -33,10 +32,11 @@ def build_content_selector(core_nlp_port):
     return content_selector
 
 def build_summarizer(core_nlp_port):
-    content_selector = build_content_selector(core_nlp_port)
+    coreference_resolver = CoreferenceResolver(core_nlp_port)
+    content_selector = build_content_selector()
     info_order = InfoOrder()
     sentence_realizer = SentenceRealizer()
-    summarizer = Summarizer(content_selector, info_order, sentence_realizer)
+    summarizer = Summarizer(coreference_resolver, content_selector, info_order, sentence_realizer)
     return summarizer
 
 def init_dirs():

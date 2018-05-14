@@ -7,18 +7,22 @@ class CoreferenceResolver:
     def __init__(self, port):
         self.port = port
 
-    def resolve(self, sentences):
+    def resolve(self, text):
+        '''
+        This will accept a block of text, and return
+        a list of sentences with coreferences resolved.
+        '''
+
         #Set up the Stanford Toolkit
         nlp = StanfordCoreNLP('http://localhost:{}'.format(self.port))
-
-        #process all the sentences passed in
-        text = ' '.join(sentences)
 
         output = nlp.annotate(text, properties={
             'annotators': 'coref',
             'pipelineLanguage': 'en',
             'outputFormat': 'json'
         })
+
+        sentences = []
 
         #loop through coreference dictionary
         for r, corefs in output['corefs'].items():
@@ -39,7 +43,6 @@ class CoreferenceResolver:
                     #handle multi-word replacements by removing additional words
                     if startIndex != endIndex-1:
                         editedSentence = editedSentence[0:startIndex] + editedSentence[endIndex-1:]
-                    print(sentences, len(sentences))
-                    sentences[sentIdx] = ' '.join(editedSentence)
+                    sentences.append(' '.join(editedSentence))
 
         return sentences
