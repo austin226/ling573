@@ -1,11 +1,37 @@
 #!/usr/bin/python3
 
 import json
+from collections import OrderedDict
 from pycorenlp import StanfordCoreNLP
+
+class Coreference:
+    def __init__(self, data):
+        self.text = data['text']
+        self.replacementText = data['text']
+        self.startIndex = data['startIndex']
+        self.sentenceIndex = data['sentNum'] - 1
+        self.endIndex = data['endIndex']
+
+    def __repr__(self):
+        return "{} {} {} {} {}".format(self.text, self.replacementText, self.startIndex, self.sentenceIndex, self.endIndex)
 
 class CoreferenceResolver:
     def __init__(self, port):
         self.port = port
+
+    def replace_tokens(self, tokens, replacementText, startIndex, endIndex):
+        for i in range(startIndex, endIndex):
+            if i not in tokens:
+                # Don't do a replacement if the range does not exist
+                return tokens
+
+        output = OrderedDict()
+        for k, v in tokens.items():
+            if k < startIndex or k >= endIndex:
+                output[k] = v
+            elif k == startIndex:
+                output[k] = replacementText
+        return output
 
     def resolve(self, text):
         '''
@@ -23,6 +49,10 @@ class CoreferenceResolver:
         })
 
         sentences = []
+        for s in output['sentences']:
+            sentences.append(OrderedDict([(i, t['originalText']) for i, t in enumerate(s['tokens'])]))
+
+        coreferences = []
 
         #loop through coreference dictionary
         for r, corefs in output['corefs'].items():
@@ -34,15 +64,25 @@ class CoreferenceResolver:
             #replace representative mention
             for s in corefs:
                 if not s['isRepresentativeMention']:
-                    sentIdx = s['sentNum'] - 1
-                    startIndex = s['startIndex']
-                    endIndex = s['endIndex']
+                    coref = Coreference(s)
+                    coref.replacementText = replacementText
+                    coreferences.append(coref)
 
-                    tokens = output['sentences'][sentIdx]['tokens']
-                    editedSentence = [t['originalText'] for t in tokens]
-                    #handle multi-word replacements by removing additional words
-                    if startIndex != endIndex-1:
-                        editedSentence = editedSentence[0:startIndex] + editedSentence[endIndex-1:]
-                    sentences.append(' '.join(editedSentence))
+        # Index corefs by sentence
+        corefs_by_sentence = {}
+        for coref in coreferences:
+            if coref.sentenceIndex not in corefs_by_sentence:
+                corefs_by_sentence[coref.sentenceIndex] = []
+            corefs_by_sentence[coref.sentenceIndex].append(coref)
 
-        return sentences
+        # Replace tokens in each sentence
+        for sentenceIndex, corefs in corefs_by_sentence.items():
+            tokens = sentences[sentenceIndex]
+            sentences[sentenceIndex] = self.replace_tokens(tokens, coref.replacementText, coref.startIndex, coref.endIndex)
+
+        # Turn sentences back into strings
+        text_sentences = []
+        for s in sentences:
+            tokens = list(s.values())
+            text_sentences.append(' '.join(tokens))
+        return text_sentences
