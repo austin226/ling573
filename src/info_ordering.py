@@ -92,7 +92,7 @@ class InfoOrder:
 
     #Find the two most similar sentences
     def initial_compare(self, sentences):
-        max_similarity = 0
+        max_similarity = -1
         pair = list()
         for s1 in range(0, len(sentences)):
             for s2 in range(s1+1, len(sentences)):
@@ -111,6 +111,9 @@ class InfoOrder:
         doc_id_list[i] is the doc_id containing sentences[i]
         '''
       
+        if len(sentences) == 0:
+            return sentences
+
         sentencesList = list()
         sentencesOutput = list()
         chronologicalOrderedSentences = list()
