@@ -2,6 +2,7 @@
 
 import os
 import sys
+import traceback
 
 from content_selection import ContentSelector
 from coreference import CoreferenceResolver
@@ -78,6 +79,7 @@ if __name__ == '__main__':
         except Exception as e:
             print('Error summarizing docset "{}"'.format(topic_id), file=sys.stderr)
             print(e, file=sys.stderr)
+            traceback.print_exc(file=sys.stderr)
             summary = []
         print_sentences(output_base_dir, topic_id, summary)
 

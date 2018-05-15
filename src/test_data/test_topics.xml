@@ -35,6 +35,38 @@
 
 <TACtaskdata year="2010" track="SUMMARIZATION" task="GUIDED"  dataset="TEST">
 
+<topic id = "D1033F" category = "5">
+
+	<title> South Korean Wire Tapping </title>
+
+	<docsetA id = "D1033F-A">
+		<doc id = "AFP_ENG_20050725.0053" />
+		<doc id = "XIN_ENG_20050725.0057" />
+		<doc id = "AFP_ENG_20050725.0110" />
+		<doc id = "AFP_ENG_20050726.0066" />
+		<doc id = "AFP_ENG_20050726.0234" />
+		<doc id = "APW_ENG_20050726.0473" />
+		<doc id = "AFP_ENG_20050804.0145" />
+		<doc id = "AFP_ENG_20050805.0027" />
+		<doc id = "APW_ENG_20050805.0274" />
+		<doc id = "APW_ENG_20050810.0312" />
+	</docsetA>
+
+	<docsetB id = "D1033F-B">
+		<doc id = "AFP_ENG_20050828.0545" />
+		<doc id = "AFP_ENG_20051027.0073" />
+		<doc id = "APW_ENG_20051115.0109" />
+		<doc id = "XIN_ENG_20051115.0364" />
+		<doc id = "APW_ENG_20051116.0152" />
+		<doc id = "AFP_ENG_20051120.0244" />
+		<doc id = "APW_ENG_20051121.0143" />
+		<doc id = "APW_ENG_20051202.0433" />
+		<doc id = "APW_ENG_20051214.0654" />
+		<doc id = "AFP_ENG_20060207.0040" />
+	</docsetB>
+
+</topic>
+
 <topic id = "D1026E" category = "3">
 
 	<title> Head Injuries </title>
@@ -115,6 +147,7 @@
 	</docsetB>
 
 </topic>
+
 <topic id = "D1001A" category = "2">
 
 	<title> Columbine Massacre </title>
