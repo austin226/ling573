@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 
 import fileinput
+import nltk
 import re
 import sys
 
 from nltk import word_tokenize, pos_tag
 from nltk.corpus import wordnet as wn
+nltk.download('averaged_perceptron_tagger')
 
 #input object is expected to have the following for each line:
 #date sequence 'sentence' with date formatted as YYYYMMDDHHSS; sequence represents intra-document sentence ordering
@@ -90,7 +92,7 @@ class InfoOrder:
 
     #Find the two most similar sentences
     def initial_compare(self, sentences):
-        max_similarity = 0
+        max_similarity = -1
         pair = list()
         for s1 in range(0, len(sentences)):
             for s2 in range(s1+1, len(sentences)):
@@ -109,6 +111,9 @@ class InfoOrder:
         doc_id_list[i] is the doc_id containing sentences[i]
         '''
       
+        if len(sentences) == 0:
+            return sentences
+
         sentencesList = list()
         sentencesOutput = list()
         chronologicalOrderedSentences = list()
@@ -135,7 +140,7 @@ class InfoOrder:
         chronologicalOrderedSentences.remove(similarityOrderedSentences[1])
         #Check both sides of the list of processed sentences to find the closest match
         while len(chronologicalOrderedSentences) > 0:
-            max_similarity = 0
+            max_similarity = -1
             for s in chronologicalOrderedSentences:
                 similarity = self.symmetric_sentence_similarity(similarityOrderedSentences[0], s)
                 if similarity > max_similarity:
@@ -147,6 +152,8 @@ class InfoOrder:
                     max_similarity = similarity
                     candidate = [len(chronologicalOrderedSentences), s]
 
+            if not candidate:
+                continue
             #add the sentence to similarity ordered, remove from chronologically ordered
             chronologicalOrderedSentences.remove(candidate[1])
             similarityOrderedSentences.insert(candidate[0], candidate[1])

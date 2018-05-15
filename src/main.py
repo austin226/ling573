@@ -2,8 +2,10 @@
 
 import os
 import sys
+import traceback
 
 from content_selection import ContentSelector
+from coreference import CoreferenceResolver
 from doc_reader import DocReader
 from info_ordering import InfoOrder
 from sentence_extraction import SentenceExtractor
@@ -30,35 +32,37 @@ def build_content_selector():
     content_selector = ContentSelector(extractor, simplifier, segmenter)
     return content_selector
 
-def build_summarizer():
+def build_summarizer(core_nlp_port):
+    coreference_resolver = CoreferenceResolver(core_nlp_port)
     content_selector = build_content_selector()
     info_order = InfoOrder()
     sentence_realizer = SentenceRealizer()
-    summarizer = Summarizer(content_selector, info_order, sentence_realizer)
+    summarizer = Summarizer(coreference_resolver, content_selector, info_order, sentence_realizer)
     return summarizer
 
 def init_dirs():
     # Create temp directories for intermediate files
-    tmp_dirs = ['docs', 'docsets']
+    base_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+    tmp_dirs = ['docs']
     for d in tmp_dirs:
-        os.makedirs('var/{}/'.format(d), exist_ok=True)
+        os.makedirs('{}/var/{}/'.format(base_dir, d), exist_ok=True)
 
 if __name__ == '__main__':
-    # Input to the script is an XML file name
-    if len(sys.argv) < 3:
-        print('Usage: {} input_xml_filename output_base_dir'.format(sys.argv[0]))
+    if len(sys.argv) < 4:
+        print('Usage: {} input_xml_filename output_base_dir core_nlp_port'.format(sys.argv[0]))
         exit()
 
     init_dirs()
 
     input_xml_filename = sys.argv[1]
     output_base_dir = sys.argv[2]
+    core_nlp_port = int(sys.argv[3])
 
     os.makedirs(output_base_dir, exist_ok=True)
 
     # Initialize document reader with AQUAINT, AQUAINT-2, and ENG-GW root paths
     doc_reader = DocReader('/dropbox/17-18/573/AQUAINT', '/dropbox/17-18/573/AQUAINT-2', '/dropbox/17-18/573/ENG-GW')
-    summarizer = build_summarizer()
+    summarizer = build_summarizer(core_nlp_port)
 
     print('Reading in documents from "{}"...'.format(input_xml_filename))
     topics_data = doc_reader.read_docs(input_xml_filename)['topics']
@@ -70,7 +74,13 @@ if __name__ == '__main__':
 
         print('Summarizing topic "{}" (topic {} of {}, {} documents)...'.format(topic_title, i+1, len(topics_data), len(docset)))
 
-        summary = summarizer.summarize(topic_id, docset)
+        try:
+            summary = summarizer.summarize(topic_id, docset)
+        except Exception as e:
+            print('Error summarizing docset "{}"'.format(topic_id), file=sys.stderr)
+            print(e, file=sys.stderr)
+            traceback.print_exc(file=sys.stderr)
+            summary = []
         print_sentences(output_base_dir, topic_id, summary)
 
     print('Done.')

@@ -35,6 +35,134 @@
 
 <TACtaskdata year="2010" track="SUMMARIZATION" task="GUIDED"  dataset="TEST">
 
+<topic id = "D1011C" category = "3">
+
+	<title> Eating Disorders </title>
+
+	<docsetA id = "D1011C-A">
+		<doc id = "APW_ENG_20041005.0361" />
+		<doc id = "NYT_ENG_20041013.0054" />
+		<doc id = "APW_ENG_20041027.0030" />
+		<doc id = "NYT_ENG_20041101.0063" />
+		<doc id = "NYT_ENG_20041108.0161" />
+		<doc id = "NYT_ENG_20041129.0131" />
+		<doc id = "NYT_ENG_20041203.0174" />
+		<doc id = "AFP_ENG_20050112.0350" />
+		<doc id = "AFP_ENG_20050201.0632" />
+		<doc id = "NYT_ENG_20050315.0102" />
+	</docsetA>
+
+	<docsetB id = "D1011C-B">
+		<doc id = "NYT_ENG_20050321.0077" />
+		<doc id = "LTW_ENG_20050420.0036" />
+		<doc id = "APW_ENG_20050531.0040" />
+		<doc id = "NYT_ENG_20050606.0090" />
+		<doc id = "APW_ENG_20050713.1076" />
+		<doc id = "CNA_ENG_20050714.0025" />
+		<doc id = "LTW_ENG_20050819.0045" />
+		<doc id = "APW_ENG_20051208.0880" />
+		<doc id = "LTW_ENG_20060125.0085" />
+		<doc id = "LTW_ENG_20060306.0187" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1033F" category = "5">
+
+	<title> South Korean Wire Tapping </title>
+
+	<docsetA id = "D1033F-A">
+		<doc id = "AFP_ENG_20050725.0053" />
+		<doc id = "XIN_ENG_20050725.0057" />
+		<doc id = "AFP_ENG_20050725.0110" />
+		<doc id = "AFP_ENG_20050726.0066" />
+		<doc id = "AFP_ENG_20050726.0234" />
+		<doc id = "APW_ENG_20050726.0473" />
+		<doc id = "AFP_ENG_20050804.0145" />
+		<doc id = "AFP_ENG_20050805.0027" />
+		<doc id = "APW_ENG_20050805.0274" />
+		<doc id = "APW_ENG_20050810.0312" />
+	</docsetA>
+
+	<docsetB id = "D1033F-B">
+		<doc id = "AFP_ENG_20050828.0545" />
+		<doc id = "AFP_ENG_20051027.0073" />
+		<doc id = "APW_ENG_20051115.0109" />
+		<doc id = "XIN_ENG_20051115.0364" />
+		<doc id = "APW_ENG_20051116.0152" />
+		<doc id = "AFP_ENG_20051120.0244" />
+		<doc id = "APW_ENG_20051121.0143" />
+		<doc id = "APW_ENG_20051202.0433" />
+		<doc id = "APW_ENG_20051214.0654" />
+		<doc id = "AFP_ENG_20060207.0040" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1026E" category = "3">
+
+	<title> Head Injuries </title>
+
+	<docsetA id = "D1026E-A">
+		<doc id = "AFP_ENG_20041011.0132" />
+		<doc id = "NYT_ENG_20041018.0128" />
+		<doc id = "APW_ENG_20041019.0437" />
+		<doc id = "XIN_ENG_20041102.0002" />
+		<doc id = "XIN_ENG_20041105.0010" />
+		<doc id = "NYT_ENG_20041115.0206" />
+		<doc id = "APW_ENG_20041116.0011" />
+		<doc id = "XIN_ENG_20041123.0080" />
+		<doc id = "NYT_ENG_20041124.0299" />
+		<doc id = "NYT_ENG_20041126.0117" />
+	</docsetA>
+
+	<docsetB id = "D1026E-B">
+		<doc id = "XIN_ENG_20041206.0355" />
+		<doc id = "NYT_ENG_20041220.0033" />
+		<doc id = "NYT_ENG_20041225.0123" />
+		<doc id = "XIN_ENG_20050110.0249" />
+		<doc id = "NYT_ENG_20050118.0063" />
+		<doc id = "NYT_ENG_20050128.0044" />
+		<doc id = "NYT_ENG_20050307.0128" />
+		<doc id = "XIN_ENG_20050410.0001" />
+		<doc id = "LTW_ENG_20050421.0122" />
+		<doc id = "NYT_ENG_20050610.0133" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1012C" category = "1">
+
+	<title> Helios Crash </title>
+
+	<docsetA id = "D1012C-A">
+		<doc id = "LTW_ENG_20050814.0036" />
+		<doc id = "XIN_ENG_20050814.0067" />
+		<doc id = "NYT_ENG_20050814.0102" />
+		<doc id = "XIN_ENG_20050814.0196" />
+		<doc id = "XIN_ENG_20050814.0206" />
+		<doc id = "APW_ENG_20050814.0477" />
+		<doc id = "APW_ENG_20050814.0636" />
+		<doc id = "APW_ENG_20050814.0649" />
+		<doc id = "XIN_ENG_20050815.0001" />
+		<doc id = "APW_ENG_20050815.0029" />
+	</docsetA>
+
+	<docsetB id = "D1012C-B">
+		<doc id = "APW_ENG_20050816.0017" />
+		<doc id = "APW_ENG_20050816.0019" />
+		<doc id = "APW_ENG_20050816.0020" />
+		<doc id = "NYT_ENG_20050816.0225" />
+		<doc id = "APW_ENG_20050817.0015" />
+		<doc id = "APW_ENG_20050817.0684" />
+		<doc id = "APW_ENG_20050817.0908" />
+		<doc id = "APW_ENG_20050819.0862" />
+		<doc id = "NYT_ENG_20050822.0163" />
+		<doc id = "APW_ENG_20050916.0430" />
+	</docsetB>
+
+</topic>
+
 <topic id = "D1003A" category = "4">
 
 	<title> Giant Panda </title>
@@ -51,6 +179,7 @@
 	</docsetB>
 
 </topic>
+
 <topic id = "D1001A" category = "2">
 
 	<title> Columbine Massacre </title>

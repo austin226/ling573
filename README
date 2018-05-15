@@ -5,13 +5,18 @@
 
 ## Example:
     ```
-    python3 src/main.py /dropbox/17-18/573/Data/Documents/devtest/GuidedSumm10_test_topics.xml outputs/D2/
+    python3 src/main.py /dropbox/17-18/573/Data/Documents/devtest/GuidedSumm10_test_topics.xml outputs/D3/
     ```
 
 # Notes
 - Script must be invoked from the base directory of this project.
 - The script will log to stdout and stderr, but all summaries will be placed in the OUTPUT_DIR
-- Script will write intermediate files in the var/ directoryhgt
+- Script will write intermediate files in the var/ directory
+- A virtual environment will be set up in the venv/ directory
+- The script `src/run.sh` will invoke a background process, `src/server.sh`, which starts a
+    Stanford CoreNLP server on an available port. If the main process is improperly terminated,
+    this may leave the server process running.
+    Background server instances may be found via `ps aux | grep "$(whoami).*Server"`
 
 # ROUGE Evaluation
     ```

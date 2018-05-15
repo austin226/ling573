@@ -151,7 +151,13 @@ class DocReader:
     def parse_doc(self, path, format_name, doc_id):
         if format_name == 'AQUAINT' or format_name == 'ENG-GW':
             # SGML format
-            sgml = self.clip_sgml(path, doc_id, format_name)
+            try:
+                sgml = self.clip_sgml(path, doc_id, format_name)
+            except Exception as e:
+                print('Error parsing document "{}" from file "{}" (format: {})'.format(doc_id, path, format_name), file=sys.stderr)
+                print(e, file=sys.stderr)
+                return None
+
             parser = Aquaint1Parser(convert_charrefs=True)
             parser.set_doc_id(doc_id)
 
@@ -186,6 +192,7 @@ class DocReader:
             # DATE_TIME is never actually declared, so skip it
             headlines = [h.text.strip() for h in doc.findall('HEADLINE')]
             datelines = [d.text.strip() for d in doc.findall('DATELINE')]
+            paragraphs = []
 
             text = doc.find('TEXT')
             if text is not None:
