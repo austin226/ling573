@@ -75,8 +75,9 @@ if __name__ == '__main__':
 
         try:
             summary = summarizer.summarize(topic_id, docset)
-        except:
-            print('Error summarizing docset "{}"'.format(topic_id))
+        except Exception as e:
+            print('Error summarizing docset "{}"'.format(topic_id), file=sys.stderr)
+            print(e, file=sys.stderr)
             summary = []
         print_sentences(output_base_dir, topic_id, summary)
 
