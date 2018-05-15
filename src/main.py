@@ -73,7 +73,11 @@ if __name__ == '__main__':
 
         print('Summarizing topic "{}" (topic {} of {}, {} documents)...'.format(topic_title, i+1, len(topics_data), len(docset)))
 
-        summary = summarizer.summarize(topic_id, docset)
+        try:
+            summary = summarizer.summarize(topic_id, docset)
+        except:
+            print('Error summarizing docset "{}"'.format(topic_id))
+            summary = []
         print_sentences(output_base_dir, topic_id, summary)
 
     print('Done.')

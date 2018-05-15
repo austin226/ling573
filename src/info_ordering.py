@@ -137,7 +137,7 @@ class InfoOrder:
         chronologicalOrderedSentences.remove(similarityOrderedSentences[1])
         #Check both sides of the list of processed sentences to find the closest match
         while len(chronologicalOrderedSentences) > 0:
-            max_similarity = 0
+            max_similarity = -1
             for s in chronologicalOrderedSentences:
                 similarity = self.symmetric_sentence_similarity(similarityOrderedSentences[0], s)
                 if similarity > max_similarity:
@@ -149,6 +149,8 @@ class InfoOrder:
                     max_similarity = similarity
                     candidate = [len(chronologicalOrderedSentences), s]
 
+            if not candidate:
+                continue
             #add the sentence to similarity ordered, remove from chronologically ordered
             chronologicalOrderedSentences.remove(candidate[1])
             similarityOrderedSentences.insert(candidate[0], candidate[1])

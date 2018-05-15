@@ -1,5 +1,10 @@
 #!/bin/sh
 
+function finish {
+    disown
+}
+trap finish EXIT
+
 set -e
 
 export PROJECT_ROOT=$(pwd)
