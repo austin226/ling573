@@ -1,10 +1,12 @@
-#!/bin/bash
+#!/bin/sh
+
 export PROJECT_ROOT=$(pwd)
 export SERVER_LOG=$PROJECT_ROOT/var/log/StanfordCoreNLPServer.$(date +%s).log
 
 mkdir -p var/log
+mkdir -p var/tmp
 
-virtualenv -p python3 venv
+virtualenv -p /bin/python3.4 venv
 source ./venv/bin/activate
 
 # Start the server
