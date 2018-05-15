@@ -9,6 +9,8 @@ set -e
 
 export PROJECT_ROOT=$(pwd)
 export SERVER_LOG=$PROJECT_ROOT/var/log/StanfordCoreNLPServer.$(date +%s).log
+INPUT_XML_FILENAME=$1
+OUTPUT_DIR=$2
 
 mkdir -p var/log
 mkdir -p var/tmp
@@ -28,9 +30,6 @@ PORT=$(grep "listening at .*:\([0-9]\+\)$" ${SERVER_LOG} | sed "s/.*[:.]//g")
 echo "CoreNLP Port: ${PORT}"
 
 pip install -r ${PROJECT_ROOT}/src/requirements.txt
-
-INPUT_XML_FILENAME="/dropbox/17-18/573/Data/Documents/devtest/GuidedSumm10_test_topics.xml"
-OUTPUT_DIR="${PROJECT_ROOT}/outputs/D3/"
 
 set +e
 python ${PROJECT_ROOT}/src/main.py $INPUT_XML_FILENAME $OUTPUT_DIR $PORT
