@@ -6,7 +6,6 @@ from pycorenlp import StanfordCoreNLP
 
 class Coreference:
     def __init__(self, data):
-        self.text = data['text']
         self.replacementText = data['text']
         self.startIndex = data['startIndex']
         self.sentenceIndex = data['sentNum'] - 1
@@ -50,7 +49,7 @@ class CoreferenceResolver:
 
         sentences = []
         for s in output['sentences']:
-            sentences.append(OrderedDict([(i, t['originalText']) for i, t in enumerate(s['tokens'])]))
+            sentences.append(OrderedDict([(t['index'], t['originalText']) for t in s['tokens']]))
 
         coreferences = []
 
@@ -77,8 +76,9 @@ class CoreferenceResolver:
 
         # Replace tokens in each sentence
         for sentenceIndex, corefs in corefs_by_sentence.items():
-            tokens = sentences[sentenceIndex]
-            sentences[sentenceIndex] = self.replace_tokens(tokens, coref.replacementText, coref.startIndex, coref.endIndex)
+            for coref in corefs:
+                tokens = sentences[sentenceIndex]
+                sentences[sentenceIndex] = self.replace_tokens(tokens, coref.replacementText, coref.startIndex, coref.endIndex)
 
         # Turn sentences back into strings
         text_sentences = []

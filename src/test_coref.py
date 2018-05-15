@@ -21,18 +21,16 @@ class CoreferenceResolverTest(unittest.TestCase):
         self.assertEqual(OrderedDict([(0, 'zero'), (1, 'foo'), (3, 'bar')]), tokens)
 
     def testResolve(self):
-        return #TODO
-        sentences = [
-            'Bill Clinton was governor of Arkansas.',
-            'From humble beginnings he rose to the highest office in the land.',
-            'Clinton was involved in a private affair.'
-        ]
+        text = '''
+        Bill Clinton was governor of Arkansas. From humble beginnings he rose to the highest office in the land. Clinton was involved in a private affair.
+        '''
+
         expected = [
-            'Bill Clinton was governor of Arkansas.',
-            'From humble beginnings Bill Clinton rose to the highest office in the land.',
-            'Bill Clinton was involved in a private affair.'
+            'Bill Clinton was governor of Arkansas .',
+            'From humble beginnings Bill Clinton rose to the highest office in the land .',
+            'Bill Clinton was involved in a private affair .'
         ]
-        s = self.coref.resolve(sentences)
+        s = self.coref.resolve(text)
         self.assertEqual(expected, s)
 
 if __name__ == '__main__':
