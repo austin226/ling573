@@ -55,5 +55,8 @@ class SentenceExtractor:
             Format of output is [1] text \n
                                 [2] text \n ... etc
         """
-        lines = [line.strip().split(' ', 1)[1].strip() for line in perl_output.split('\n')]
+        try:
+            lines = [line.strip().split(' ', 1)[1].strip() for line in perl_output.split('\n')]
+        except:
+            return []
         return lines
