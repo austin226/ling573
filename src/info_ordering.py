@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 
 import fileinput
+import nltk
 import re
 import sys
 
 from nltk import word_tokenize, pos_tag
 from nltk.corpus import wordnet as wn
+nltk.download('averaged_perceptron_tagger')
 
 #input object is expected to have the following for each line:
 #date sequence 'sentence' with date formatted as YYYYMMDDHHSS; sequence represents intra-document sentence ordering
