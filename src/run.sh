@@ -10,7 +10,7 @@ set -e
 export PROJECT_ROOT=$(pwd)
 export SERVER_LOG=$PROJECT_ROOT/var/log/StanfordCoreNLPServer.$(date +%s).log
 INPUT_XML_FILENAME=$1
-OUTPUT_DIR=$2
+OUTPUT_DIR=$(realpath $2)
 
 mkdir -p var/log
 mkdir -p var/tmp
