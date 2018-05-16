@@ -27,6 +27,7 @@ class Summarizer:
             output_filename = '{}/{}'.format(topic_dir, doc_id)
             text = ' '.join(doc_info['paragraphs'])
             sentences = self.coreference_resolver.resolve(text)
+            print("{} / {}: Resolved {} sentences.".format(topic_id, doc_id, len(sentences)))
             with open(output_filename, 'w', encoding='utf8') as f:
                 for p in sentences:
                     f.write(p + '\n')
@@ -47,6 +48,7 @@ class Summarizer:
         self._build_cluster(topic_id, docset)
 
         doc_id_list, sent_idx_list, sentences, simplified_sentences  = self.content_selector.select(topic_id)
+        print("{}: Selected {} sentences.".format(topic_id, len(sentences)))
         ordered_sentences = self.info_order.process(doc_id_list, sent_idx_list, sentences)
         realized_sentences = self.sentence_realizer.process(ordered_sentences, simplified_sentences)
         return realized_sentences
