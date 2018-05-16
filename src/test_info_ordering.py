@@ -37,7 +37,7 @@ class InfoOrderTest(unittest.TestCase):
         sim_cache = {}
         for s1 in sentences:
             for s2 in sentences:
-                sim = self.info_ord.sentence_similarity(s1, s2, sim_cache)
+                sim = self.info_ord.sentence_similarity(s1, s2, sim_cache, {})
                 self.assertEqual(expected_similarity[sim_idx], sim)
                 sim_idx += 1
 
