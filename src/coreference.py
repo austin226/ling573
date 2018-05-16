@@ -41,6 +41,8 @@ class CoreferenceResolver:
         #Set up the Stanford Toolkit
         nlp = StanfordCoreNLP('http://localhost:{}'.format(self.port))
 
+        # Limit request length
+        request_text = text[0:99000]
         output = nlp.annotate(text, properties={
             'annotators': 'coref',
             'pipelineLanguage': 'en',
