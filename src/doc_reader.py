@@ -271,8 +271,6 @@ class DocReader:
                 doc_id = doc.get('id')
                 doc_path, doc_format = self.resolve_path(doc_id)
                 try:
-                    if doc_format == 'AQUAINT':
-                        continue
                     doc_contents = self.parse_doc(doc_path, doc_format, doc_id)
                     parsed_doc_count += 1
                 except FileNotFoundError:
