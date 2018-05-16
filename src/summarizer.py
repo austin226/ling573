@@ -25,8 +25,9 @@ class Summarizer:
         os.makedirs(topic_dir, exist_ok=True)
         for doc_id, doc_info in docset.items():
             output_filename = '{}/{}'.format(topic_dir, doc_id)
-            text = ' '.join(doc_info['paragraphs'])
-            sentences = self.coreference_resolver.resolve(text)
+            sentences = []
+            for text in doc_info['paragraphs']:
+                sentences.extend(self.coreference_resolver.resolve(text))
             with open(output_filename, 'w', encoding='utf8') as f:
                 for p in sentences:
                     f.write(p + '\n')
