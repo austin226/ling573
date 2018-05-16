@@ -7,35 +7,38 @@ class InfoOrderTest(unittest.TestCase):
     def setUp(self):
         self.info_ord = InfoOrder()
 
-    def test_to_numeric_list(self):
-        doc_id_list = ['NYT19990424.0231','XIN_ENG_20050210.0029']
-        numeric_list = ['199904240231', '200502100029']
-        self.assertEqual(numeric_list, self.info_ord.to_numeric_list(doc_id_list))
-
-    def test_basic_order(self):
-        doc_id_list = ['XIN_ENG_20050210.0029','NYT19990424.0231']
-        sent_idx_list = [1, 1]
+    def testSentenceSimilarity(self):
         sentences = [
-            'This is the second sentence.',
-            'This is the first sentence.',
+            "The pumped line can't fear the push.",
+            "The green sheep coughed hourly.",
+            "The small letter whispered quirkily.",
+            "The yellow book talked gracefully.",
         ]
-        processed = self.info_ord.process(doc_id_list, sent_idx_list, sentences)
-
-        self.assertEqual([sentences[1], sentences[0]], processed)
-
-    def test_mult_sent_per_doc(self):
-        doc_id_list = [
-            'XIN_ENG_20050210.0029',
-            'XIN_ENG_20050210.0029',
-            'NYT19990424.0231',
-            'XIN_ENG_20050210.0029',
+        expected_similarity = [
+            1.0,
+            0.11435786435786437,
+            0.1414141414141414,
+            0.12638888888888888,
+            0.12380952380952381,
+            1.0,
+            0.12777777777777777,
+            0.12631578947368421,
+            0.11688311688311688,
+            0.0992063492063492,
+            1.0,
+            0.1875,
+            0.11666666666666667,
+            0.10964912280701754,
+            0.1875,
+            1.0,
         ]
-        sent_idx_list = [3, 1, 1, 2]
-        sentences = ['a', 'b', 'c', 'd']
+        sim_idx = 0
 
-        processed = self.info_ord.process(doc_id_list, sent_idx_list, sentences)
-
-        self.assertEqual(['c', 'b', 'd', 'a'], processed)
+        for s1 in sentences:
+            for s2 in sentences:
+                sim = self.info_ord.sentence_similarity(s1, s2)
+                self.assertEqual(expected_similarity[sim_idx], sim)
+                sim_idx += 1
 
 if __name__ == '__main__':
     unittest.main()
