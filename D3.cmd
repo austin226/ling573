@@ -4,5 +4,5 @@ output = var/D3.out
 error = var/D3.error
 log = var/D3.log
 notification = complete
-request_memory = 2048
+request_memory = 4096
 Queue
