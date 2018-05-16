@@ -49,15 +49,20 @@ class InfoOrder:
         except:
             return None
 
-    def sentence_similarity(self, sentence1, sentence2):
+    def sentence_similarity(self, sentence1, sentence2, sim_cache):
         """ compute the sentence similarity using Wordnet """
+        if sentence1 not in sim_cache:
+            sim_cache[sentence1] = {}
+        elif sentence2 in sim_cache[sentence1]:
+            return sim_cache[sentence1][sentence2]
+
         # Tokenize and tag
-        sentence1 = pos_tag(word_tokenize(sentence1))
-        sentence2 = pos_tag(word_tokenize(sentence2))
+        s1_tokens = pos_tag(word_tokenize(sentence1))
+        s2_tokens = pos_tag(word_tokenize(sentence2))
 
         # Get the synsets for the tagged words
-        synsets1 = [self.tagged_to_synset(*tagged_word) for tagged_word in sentence1]
-        synsets2 = [self.tagged_to_synset(*tagged_word) for tagged_word in sentence2]
+        synsets1 = [self.tagged_to_synset(*tagged_word) for tagged_word in s1_tokens]
+        synsets2 = [self.tagged_to_synset(*tagged_word) for tagged_word in s2_tokens]
 
         # Filter out the Nones
         synsets1 = [ss for ss in synsets1 if ss]
@@ -83,20 +88,22 @@ class InfoOrder:
             score /= count
         else:
             score = 0
+
+        sim_cache[sentence1][sentence2] = score
         return score
 
     #Balance out the differences in comparing A,B vs B,A
-    def symmetric_sentence_similarity(self, sentence1, sentence2):
+    def symmetric_sentence_similarity(self, sentence1, sentence2, sim_cache):
         """ compute the symmetric sentence similarity using Wordnet """
-        return self.sentence_similarity(sentence1, sentence2) + self.sentence_similarity(sentence2, sentence1)
+        return self.sentence_similarity(sentence1, sentence2, sim_cache) + self.sentence_similarity(sentence2, sentence1, sim_cache)
 
     #Find the two most similar sentences
-    def initial_compare(self, sentences):
+    def initial_compare(self, sentences, sim_cache):
         max_similarity = -1
         pair = list()
         for s1 in range(0, len(sentences)):
             for s2 in range(s1+1, len(sentences)):
-                similarity = self.symmetric_sentence_similarity(sentences[s1], sentences[s2])
+                similarity = self.symmetric_sentence_similarity(sentences[s1], sentences[s2], sim_cache)
                 if similarity > max_similarity:
                     max_similarity = similarity
                     pair = [sentences[s1], sentences[s2]]
@@ -135,19 +142,20 @@ class InfoOrder:
             chronologicalOrderedSentences.append(sentence[1])
 
         #Find the 2 closest sentences
-        similarityOrderedSentences = self.initial_compare(chronologicalOrderedSentences)
+        sim_cache = {}
+        similarityOrderedSentences = self.initial_compare(chronologicalOrderedSentences, sim_cache)
         chronologicalOrderedSentences.remove(similarityOrderedSentences[0])
         chronologicalOrderedSentences.remove(similarityOrderedSentences[1])
         #Check both sides of the list of processed sentences to find the closest match
         while len(chronologicalOrderedSentences) > 0:
             max_similarity = -1
             for s in chronologicalOrderedSentences:
-                similarity = self.symmetric_sentence_similarity(similarityOrderedSentences[0], s)
+                similarity = self.symmetric_sentence_similarity(similarityOrderedSentences[0], s, sim_cache)
                 if similarity > max_similarity:
                     max_similarity = similarity
                     candidate = [0, s]
             for s in chronologicalOrderedSentences:
-                similarity = self.symmetric_sentence_similarity(similarityOrderedSentences[-1], s)
+                similarity = self.symmetric_sentence_similarity(similarityOrderedSentences[-1], s, sim_cache)
                 if similarity > max_similarity:
                     max_similarity = similarity
                     candidate = [len(chronologicalOrderedSentences), s]
