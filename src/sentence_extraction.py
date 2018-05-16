@@ -27,6 +27,7 @@ class SentenceExtractor:
 
         summary = subprocess.getoutput(summary_command)
         sentences = self.parse_sentences(summary)
+        assert len(sentences) <= self.max_sent, "{} sentences extracted (max_sent={})".format(len(sentences), self.max_sent)
         return doc_id_list, sent_idx_list, sentences
 
     def parse_doc_id_list(self, extract):
