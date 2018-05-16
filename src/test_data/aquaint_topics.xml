@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE TACtaskdata [
+
+<!-- ======================================================================
+      TAC 2010 Guided Summarization task data definition
+
+      Written 2010-06-18 by Karolina Owczarzak <karolina.owczarzak@nist.gov>
+     ====================================================================== -->
+
+    <!ELEMENT TACtaskdata  (topic+)           >
+    <!ELEMENT topic       (title, docsetA, docsetB) >
+    <!ELEMENT title       (#PCDATA)           >
+    <!ELEMENT docsetA     (doc+)              >
+    <!ELEMENT docsetB     (doc+)              >
+    <!ELEMENT doc          EMPTY              >		       
+
+    <!ATTLIST TACtaskdata
+                      year    CDATA              #REQUIRED
+		      track   (SUMMARIZATION)    #REQUIRED
+                      task    (GUIDED)           #REQUIRED
+		      dataset (SAMPLE|TEST)      #REQUIRED >
+
+    <!ATTLIST topic  id       ID    #REQUIRED 
+		     category CDATA #REQUIRED >
+
+    <!ATTLIST docsetA  id     ID    #REQUIRED >
+
+    <!ATTLIST docsetB  id     ID    #REQUIRED >
+
+    <!ATTLIST doc      id     CDATA #REQUIRED >   
+
+
+<!-- ====================================================================== -->
+]>
+
+<TACtaskdata year="2010" track="SUMMARIZATION" task="GUIDED"  dataset="TEST">
+
+<topic id = "D1001A" category = "2">
+
+	<title> Columbine Massacre </title>
+
+	<docsetA id = "D1001A-A">
+		<doc id = "APW19990421.0284" />
+		<doc id = "APW19990422.0082" />
+		<doc id = "APW19990422.0095" />
+		<doc id = "NYT19990423.0262" />
+		<doc id = "NYT19990424.0231" />
+		<doc id = "APW19990425.0023" />
+		<doc id = "APW19990425.0114" />
+		<doc id = "NYT19990425.0192" />
+		<doc id = "APW19990427.0078" />
+		<doc id = "APW19990428.0297" />
+	</docsetA>
+
+	<docsetB id = "D1001A-B">
+		<doc id = "APW19990502.0104" />
+		<doc id = "APW19990503.0128" />
+		<doc id = "APW19990503.0161" />
+		<doc id = "APW19990503.0260" />
+		<doc id = "NYT19990503.0397" />
+		<doc id = "XIE19990504.0020" />
+		<doc id = "XIE19990504.0328" />
+		<doc id = "APW19990506.0070" />
+		<doc id = "APW19990510.0131" />
+		<doc id = "APW19990511.0210" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1002A" category = "5">
+
+	<title> Diallo Trial </title>
+
+	<docsetA id = "D1002A-A">
+		<doc id = "NYT19990330.0349" />
+		<doc id = "NYT19990330.0350" />
+		<doc id = "APW19990331.0161" />
+		<doc id = "NYT19990331.0403" />
+		<doc id = "NYT19990401.0006" />
+		<doc id = "APW19990401.0274" />
+		<doc id = "NYT19990401.0410" />
+		<doc id = "NYT19990401.0413" />
+		<doc id = "NYT19990501.0002" />
+		<doc id = "APW19990929.0010" />
+	</docsetA>
+
+	<docsetB id = "D1002A-B">
+		<doc id = "APW19991015.0014" />
+		<doc id = "APW20000110.0134" />
+		<doc id = "NYT20000110.0221" />
+		<doc id = "NYT19991209.0360" />
+		<doc id = "NYT19991216.0349" />
+		<doc id = "NYT19991216.0409" />
+		<doc id = "NYT19991218.0040" />
+		<doc id = "NYT19991218.0300" />
+		<doc id = "NYT19991219.0252" />
+		<doc id = "NYT19991221.0375" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1004A" category = "1">
+
+	<title> Papua Tsunami </title>
+
+	<docsetA id = "D1004A-A">
+		<doc id = "XIE19980718.0080" />
+		<doc id = "XIE19980718.0082" />
+		<doc id = "APW19980718.0229" />
+		<doc id = "APW19980718.0805" />
+		<doc id = "APW19980718.0828" />
+		<doc id = "APW19980718.0831" />
+		<doc id = "APW19980718.0833" />
+		<doc id = "XIE19980719.0035" />
+		<doc id = "APW19980719.0060" />
+		<doc id = "XIE19980719.0133" />
+	</docsetA>
+
+	<docsetB id = "D1004A-B">
+		<doc id = "APW19980720.0063" />
+		<doc id = "XIE19980720.0105" />
+		<doc id = "APW19980720.0117" />
+		<doc id = "XIE19980720.0153" />
+		<doc id = "APW19980720.0192" />
+		<doc id = "APW19980720.0200" />
+		<doc id = "NYT19980720.0321" />
+		<doc id = "XIE19980721.0022" />
+		<doc id = "XIE19980721.0057" />
+		<doc id = "XIE19980721.0147" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1006A" category = "3">
+
+	<title> Vioxx </title>
+
+	<docsetA id = "D1006A-A">
+		<doc id = "LTW_ENG_20041001.0095" />
+		<doc id = "NYT_ENG_20041006.0329" />
+		<doc id = "NYT_ENG_20041006.0378" />
+		<doc id = "APW_ENG_20041006.0456" />
+		<doc id = "NYT_ENG_20041007.0285" />
+		<doc id = "APW_ENG_20041008.0053" />
+		<doc id = "NYT_ENG_20041011.0247" />
+		<doc id = "LTW_ENG_20041014.0021" />
+		<doc id = "NYT_ENG_20041015.0265" />
+		<doc id = "LTW_ENG_20041018.0077" />
+	</docsetA>
+
+	<docsetB id = "D1006A-B">
+		<doc id = "APW_ENG_20041019.0309" />
+		<doc id = "APW_ENG_20041022.0270" />
+		<doc id = "APW_ENG_20041029.0302" />
+		<doc id = "APW_ENG_20041101.0307" />
+		<doc id = "NYT_ENG_20041104.0025" />
+		<doc id = "NYT_ENG_20041104.0275" />
+		<doc id = "LTW_ENG_20041105.0090" />
+		<doc id = "APW_ENG_20041105.0429" />
+		<doc id = "AFP_ENG_20041105.0545" />
+		<doc id = "NYT_ENG_20041108.0087" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1007B" category = "3">
+
+	<title> Bird Flu </title>
+
+	<docsetA id = "D1007B-A">
+		<doc id = "XIE19971208.0088" />
+		<doc id = "XIE19971209.0107" />
+		<doc id = "XIE19971215.0046" />
+		<doc id = "XIE19971216.0046" />
+		<doc id = "XIE19971216.0096" />
+		<doc id = "XIE19971218.0167" />
+		<doc id = "XIE19971219.0122" />
+		<doc id = "XIE19971224.0094" />
+		<doc id = "XIE19971225.0013" />
+		<doc id = "XIE19971226.0101" />
+	</docsetA>
+
+	<docsetB id = "D1007B-B">
+		<doc id = "XIE19980104.0065" />
+		<doc id = "XIE19980105.0056" />
+		<doc id = "XIE19980108.0192" />
+		<doc id = "XIE19980108.0262" />
+		<doc id = "XIE19971227.0072" />
+		<doc id = "XIE19971227.0085" />
+		<doc id = "XIE19971228.0040" />
+		<doc id = "XIE19971230.0099" />
+		<doc id = "XIE19971231.0059" />
+		<doc id = "XIE19971231.0164" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1008B" category = "4">
+
+	<title> Chesapeake Bay </title>
+
+	<docsetA id = "D1008B-A">
+		<doc id = "NYT_ENG_20041014.0154" />
+		<doc id = "LTW_ENG_20041101.0081" />
+		<doc id = "LTW_ENG_20041110.0005" />
+		<doc id = "LTW_ENG_20041112.0049" />
+		<doc id = "LTW_ENG_20041117.0088" />
+		<doc id = "LTW_ENG_20041204.0015" />
+		<doc id = "LTW_ENG_20041229.0088" />
+		<doc id = "LTW_ENG_20050110.0119" />
+		<doc id = "LTW_ENG_20050124.0088" />
+		<doc id = "LTW_ENG_20050124.0089" />
+	</docsetA>
+
+	<docsetB id = "D1008B-B">
+		<doc id = "LTW_ENG_20050302.0096" />
+		<doc id = "LTW_ENG_20050311.0019" />
+		<doc id = "LTW_ENG_20050311.0020" />
+		<doc id = "LTW_ENG_20050411.0080" />
+		<doc id = "LTW_ENG_20050727.0069" />
+		<doc id = "LTW_ENG_20050727.0078" />
+		<doc id = "LTW_ENG_20050804.0094" />
+		<doc id = "LTW_ENG_20050927.0115" />
+		<doc id = "LTW_ENG_20051115.0144" />
+		<doc id = "LTW_ENG_20051125.0002" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1009B" category = "5">
+
+	<title> Jon Benet Ramsey </title>
+
+	<docsetA id = "D1009B-A">
+		<doc id = "NYT19981001.0493" />
+		<doc id = "APW19990107.0206" />
+		<doc id = "APW19990128.0158" />
+		<doc id = "APW19990206.0079" />
+		<doc id = "NYT19981215.0290" />
+		<doc id = "NYT19980625.0509" />
+		<doc id = "NYT19980627.0184" />
+		<doc id = "APW19980709.0454" />
+		<doc id = "NYT19980821.0418" />
+		<doc id = "NYT19980904.0388" />
+	</docsetA>
+
+	<docsetB id = "D1009B-B">
+		<doc id = "APW19990214.0104" />
+		<doc id = "APW19990319.0192" />
+		<doc id = "APW19990323.0262" />
+		<doc id = "APW19990408.0257" />
+		<doc id = "APW19990420.0308" />
+		<doc id = "APW19990526.0335" />
+		<doc id = "APW19990705.0143" />
+		<doc id = "APW19990714.0041" />
+		<doc id = "APW19990911.0100" />
+		<doc id = "APW19990913.0023" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1012C" category = "1">
+
+	<title> Helios Crash </title>
+
+	<docsetA id = "D1012C-A">
+		<doc id = "LTW_ENG_20050814.0036" />
+		<doc id = "XIN_ENG_20050814.0067" />
+		<doc id = "NYT_ENG_20050814.0102" />
+		<doc id = "XIN_ENG_20050814.0196" />
+		<doc id = "XIN_ENG_20050814.0206" />
+		<doc id = "APW_ENG_20050814.0477" />
+		<doc id = "APW_ENG_20050814.0636" />
+		<doc id = "APW_ENG_20050814.0649" />
+		<doc id = "XIN_ENG_20050815.0001" />
+		<doc id = "APW_ENG_20050815.0029" />
+	</docsetA>
+
+	<docsetB id = "D1012C-B">
+		<doc id = "APW_ENG_20050816.0017" />
+		<doc id = "APW_ENG_20050816.0019" />
+		<doc id = "APW_ENG_20050816.0020" />
+		<doc id = "NYT_ENG_20050816.0225" />
+		<doc id = "APW_ENG_20050817.0015" />
+		<doc id = "APW_ENG_20050817.0684" />
+		<doc id = "APW_ENG_20050817.0908" />
+		<doc id = "APW_ENG_20050819.0862" />
+		<doc id = "NYT_ENG_20050822.0163" />
+		<doc id = "APW_ENG_20050916.0430" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1013C" category = "3">
+
+	<title> Identity Theft </title>
+
+	<docsetA id = "D1013C-A">
+		<doc id = "NYT19981014.0035" />
+		<doc id = "NYT19981021.0190" />
+		<doc id = "NYT19981102.0437" />
+		<doc id = "APW19990112.0052" />
+		<doc id = "NYT19981231.0011" />
+		<doc id = "NYT19980603.0206" />
+		<doc id = "NYT19980731.0420" />
+		<doc id = "NYT19980909.0158" />
+		<doc id = "NYT19980909.0159" />
+		<doc id = "NYT19980909.0160" />
+	</docsetA>
+
+	<docsetB id = "D1013C-B">
+		<doc id = "NYT20000211.0369" />
+		<doc id = "NYT19990216.0025" />
+		<doc id = "APW20000307.0135" />
+		<doc id = "APW20000309.0005" />
+		<doc id = "APW20000317.0061" />
+		<doc id = "NYT19990420.0106" />
+		<doc id = "NYT20000421.0095" />
+		<doc id = "NYT20000510.0252" />
+		<doc id = "NYT19990701.0080" />
+		<doc id = "NYT19990722.0257" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1014C" category = "3">
+
+	<title> Obesity </title>
+
+	<docsetA id = "D1014C-A">
+		<doc id = "XIE19961018.0087" />
+		<doc id = "XIE19961102.0087" />
+		<doc id = "XIE19961115.0291" />
+		<doc id = "XIE19970123.0141" />
+		<doc id = "XIE19970217.0075" />
+		<doc id = "XIE19960715.0055" />
+		<doc id = "XIE19970723.0065" />
+		<doc id = "XIE19960815.0021" />
+		<doc id = "XIE19960815.0109" />
+		<doc id = "XIE19960910.0251" />
+	</docsetA>
+
+	<docsetB id = "D1014C-B">
+		<doc id = "XIE19971017.0237" />
+		<doc id = "NYT19981022.0320" />
+		<doc id = "XIE19971216.0277" />
+		<doc id = "XIE19980226.0283" />
+		<doc id = "XIE19980529.0199" />
+		<doc id = "NYT19980616.0139" />
+		<doc id = "NYT19980727.0186" />
+		<doc id = "NYT19980728.0238" />
+		<doc id = "APW19980824.0037" />
+		<doc id = "NYT19980903.0137" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1015C" category = "4">
+
+	<title> Rain Forest Destruction </title>
+
+	<docsetA id = "D1015C-A">
+		<doc id = "XIE19970214.0174" />
+		<doc id = "XIE19980408.0186" />
+		<doc id = "XIE19960412.0020" />
+		<doc id = "XIE19960425.0064" />
+		<doc id = "XIE19960521.0167" />
+		<doc id = "XIE19960622.0230" />
+		<doc id = "XIE19970623.0147" />
+		<doc id = "XIE19960802.0193" />
+		<doc id = "XIE19970805.0167" />
+		<doc id = "XIE19960829.0233" />
+	</docsetA>
+
+	<docsetB id = "D1015C-B">
+		<doc id = "NYT19980601.0065" />
+		<doc id = "NYT19980608.0212" />
+		<doc id = "APW19980611.1639" />
+		<doc id = "XIE19980612.0306" />
+		<doc id = "APW19980619.0300" />
+		<doc id = "NYT19980620.0134" />
+		<doc id = "NYT19980727.0361" />
+		<doc id = "APW19980808.0489" />
+		<doc id = "APW19980810.1029" />
+		<doc id = "NYT19980818.0108" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1016C" category = "5">
+
+	<title> Soeharto Investigation </title>
+
+	<docsetA id = "D1016C-A">
+		<doc id = "XIE19981113.0074" />
+		<doc id = "XIE19981118.0285" />
+		<doc id = "XIE19981119.0113" />
+		<doc id = "XIE19980602.0006" />
+		<doc id = "APW19980602.1383" />
+		<doc id = "XIE19980609.0168" />
+		<doc id = "APW19980612.1196" />
+		<doc id = "APW19980615.1218" />
+		<doc id = "XIE19980912.0186" />
+		<doc id = "XIE19980922.0307" />
+	</docsetA>
+
+	<docsetB id = "D1016C-B">
+		<doc id = "XIE19991011.0137" />
+		<doc id = "XIE19990113.0235" />
+		<doc id = "XIE19981121.0162" />
+		<doc id = "XIE19981203.0178" />
+		<doc id = "XIE19981208.0119" />
+		<doc id = "XIE20000211.0101" />
+		<doc id = "XIE20000211.0132" />
+		<doc id = "XIE20000214.0228" />
+		<doc id = "XIE20000330.0168" />
+		<doc id = "XIE19990524.0094" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1017D" category = "1">
+
+	<title> Hurricane Floyd </title>
+
+	<docsetA id = "D1017D-A">
+		<doc id = "XIE19990911.0033" />
+		<doc id = "APW19990911.0145" />
+		<doc id = "NYT19990911.0237" />
+		<doc id = "APW19990912.0061" />
+		<doc id = "APW19990913.0046" />
+		<doc id = "APW19990913.0057" />
+		<doc id = "NYT19990913.0226" />
+		<doc id = "NYT19990913.0305" />
+		<doc id = "NYT19990913.0328" />
+		<doc id = "NYT19990913.0348" />
+	</docsetA>
+
+	<docsetB id = "D1017D-B">
+		<doc id = "APW19990914.0012" />
+		<doc id = "APW19990914.0039" />
+		<doc id = "XIE19990914.0072" />
+		<doc id = "APW19990914.0092" />
+		<doc id = "APW19990914.0094" />
+		<doc id = "APW19990914.0098" />
+		<doc id = "APW19990914.0176" />
+		<doc id = "NYT19990914.0184" />
+		<doc id = "APW19990914.0190" />
+		<doc id = "APW19990914.0234" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1019D" category = "2">
+
+	<title> Malaysia Resort Abduction </title>
+
+	<docsetA id = "D1019D-A">
+		<doc id = "APW20000424.0024" />
+		<doc id = "XIE20000424.0055" />
+		<doc id = "XIE20000424.0068" />
+		<doc id = "XIE20000424.0074" />
+		<doc id = "XIE20000424.0151" />
+		<doc id = "XIE20000424.0211" />
+		<doc id = "APW20000424.0241" />
+		<doc id = "APW20000425.0007" />
+		<doc id = "APW20000425.0011" />
+		<doc id = "APW20000425.0051" />
+	</docsetA>
+
+	<docsetB id = "D1019D-B">
+		<doc id = "XIE20000426.0171" />
+		<doc id = "APW20000427.0086" />
+		<doc id = "XIE20000427.0190" />
+		<doc id = "XIE20000428.0079" />
+		<doc id = "XIE20000428.0310" />
+		<doc id = "XIE20000429.0105" />
+		<doc id = "XIE20000429.0119" />
+		<doc id = "XIE20000429.0144" />
+		<doc id = "XIE20000429.0216" />
+		<doc id = "APW20000501.0072" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1020D" category = "3">
+
+	<title> Recall Food United States </title>
+
+	<docsetA id = "D1020D-A">
+		<doc id = "APW19981012.0494" />
+		<doc id = "XIE19981105.0287" />
+		<doc id = "XIE19981106.0010" />
+		<doc id = "APW19990123.0111" />
+		<doc id = "APW19990125.0141" />
+		<doc id = "NYT19990126.0229" />
+		<doc id = "APW19990211.0119" />
+		<doc id = "NYT19981223.0446" />
+		<doc id = "APW19990227.0088" />
+		<doc id = "NYT19980703.0266" />
+	</docsetA>
+
+	<docsetB id = "D1020D-B">
+		<doc id = "APW20000210.0332" />
+		<doc id = "NYT19991228.0280" />
+		<doc id = "APW19990405.0170" />
+		<doc id = "APW19990406.0127" />
+		<doc id = "APW19990413.0210" />
+		<doc id = "APW19990416.0259" />
+		<doc id = "APW20000609.0141" />
+		<doc id = "APW20000624.0089" />
+		<doc id = "APW20000728.0140" />
+		<doc id = "APW20000924.0061" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1023E" category = "1">
+
+	<title> Austrian Avalanches </title>
+
+	<docsetA id = "D1023E-A">
+		<doc id = "NYT19990223.0326" />
+		<doc id = "APW19990224.0002" />
+		<doc id = "APW19990224.0020" />
+		<doc id = "APW19990224.0025" />
+		<doc id = "APW19990224.0074" />
+		<doc id = "NYT19990224.0153" />
+		<doc id = "XIE19990224.0207" />
+		<doc id = "APW19990224.0208" />
+		<doc id = "XIE19990224.0283" />
+		<doc id = "NYT19990224.0361" />
+	</docsetA>
+
+	<docsetB id = "D1023E-B">
+		<doc id = "APW19990225.0021" />
+		<doc id = "APW19990225.0067" />
+		<doc id = "XIE19990225.0200" />
+		<doc id = "APW19990226.0115" />
+		<doc id = "XIE19990226.0143" />
+		<doc id = "APW19990226.0166" />
+		<doc id = "APW19990227.0083" />
+		<doc id = "NYT19990227.0100" />
+		<doc id = "XIE19990312.0363" />
+		<doc id = "NYT19990324.0055" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1024E" category = "2">
+
+	<title> Bomb Khartoum </title>
+
+	<docsetA id = "D1024E-A">
+		<doc id = "APW19980821.0439" />
+		<doc id = "NYT19980821.0454" />
+		<doc id = "APW19980821.0541" />
+		<doc id = "APW19980821.0702" />
+		<doc id = "APW19980821.0850" />
+		<doc id = "APW19980821.1000" />
+		<doc id = "APW19980821.1004" />
+		<doc id = "APW19980821.1136" />
+		<doc id = "APW19980821.1239" />
+		<doc id = "APW19980821.1283" />
+	</docsetA>
+
+	<docsetB id = "D1024E-B">
+		<doc id = "XIE19980822.0020" />
+		<doc id = "XIE19980822.0030" />
+		<doc id = "XIE19980822.0039" />
+		<doc id = "XIE19980822.0042" />
+		<doc id = "XIE19980822.0051" />
+		<doc id = "APW19980822.0087" />
+		<doc id = "XIE19980822.0257" />
+		<doc id = "APW19980822.0414" />
+		<doc id = "APW19980822.0421" />
+		<doc id = "APW19980822.0531" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1025E" category = "4">
+
+	<title> Grizzly Bears </title>
+
+	<docsetA id = "D1025E-A">
+		<doc id = "LTW_ENG_20050109.0013" />
+		<doc id = "APW_ENG_20050225.0067" />
+		<doc id = "LTW_ENG_20050808.0070" />
+		<doc id = "NYT_ENG_20050902.0367" />
+		<doc id = "LTW_ENG_20051025.0044" />
+		<doc id = "APW_ENG_20051111.0150" />
+		<doc id = "LTW_ENG_20051112.0014" />
+		<doc id = "LTW_ENG_20051114.0135" />
+		<doc id = "NYT_ENG_20051115.0177" />
+		<doc id = "APW_ENG_20051115.0914" />
+	</docsetA>
+
+	<docsetB id = "D1025E-B">
+		<doc id = "NYT_ENG_20051120.0193" />
+		<doc id = "AFP_ENG_20051215.0176" />
+		<doc id = "LTW_ENG_20060116.0046" />
+		<doc id = "NYT_ENG_20060206.0197" />
+		<doc id = "AFP_ENG_20060207.0635" />
+		<doc id = "APW_ENG_20060208.0050" />
+		<doc id = "LTW_ENG_20060216.0108" />
+		<doc id = "NYT_ENG_20060220.0049" />
+		<doc id = "LTW_ENG_20060316.0118" />
+		<doc id = "NYT_ENG_20060320.0305" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1026E" category = "3">
+
+	<title> Head Injuries </title>
+
+	<docsetA id = "D1026E-A">
+		<doc id = "AFP_ENG_20041011.0132" />
+		<doc id = "NYT_ENG_20041018.0128" />
+		<doc id = "APW_ENG_20041019.0437" />
+		<doc id = "XIN_ENG_20041102.0002" />
+		<doc id = "XIN_ENG_20041105.0010" />
+		<doc id = "NYT_ENG_20041115.0206" />
+		<doc id = "APW_ENG_20041116.0011" />
+		<doc id = "XIN_ENG_20041123.0080" />
+		<doc id = "NYT_ENG_20041124.0299" />
+		<doc id = "NYT_ENG_20041126.0117" />
+	</docsetA>
+
+	<docsetB id = "D1026E-B">
+		<doc id = "XIN_ENG_20041206.0355" />
+		<doc id = "NYT_ENG_20041220.0033" />
+		<doc id = "NYT_ENG_20041225.0123" />
+		<doc id = "XIN_ENG_20050110.0249" />
+		<doc id = "NYT_ENG_20050118.0063" />
+		<doc id = "NYT_ENG_20050128.0044" />
+		<doc id = "NYT_ENG_20050307.0128" />
+		<doc id = "XIN_ENG_20050410.0001" />
+		<doc id = "LTW_ENG_20050421.0122" />
+		<doc id = "NYT_ENG_20050610.0133" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1027E" category = "5">
+
+	<title> Shepard Beating Death Trial </title>
+
+	<docsetA id = "D1027E-A">
+		<doc id = "APW19990301.0272" />
+		<doc id = "APW19990302.0328" />
+		<doc id = "APW19990323.0021" />
+		<doc id = "APW19990323.0209" />
+		<doc id = "APW19990324.0155" />
+		<doc id = "APW19990324.0206" />
+		<doc id = "APW19990324.0246" />
+		<doc id = "APW19990325.0016" />
+		<doc id = "APW19990325.0098" />
+		<doc id = "APW19990325.0243" />
+	</docsetA>
+
+	<docsetB id = "D1027E-B">
+		<doc id = "APW19990326.0036" />
+		<doc id = "APW19990326.0111" />
+		<doc id = "APW19990329.0016" />
+		<doc id = "APW19990329.0041" />
+		<doc id = "APW19990331.0038" />
+		<doc id = "NYT19990403.0148" />
+		<doc id = "APW19990405.0001" />
+		<doc id = "APW19990405.0017" />
+		<doc id = "APW19990405.0047" />
+		<doc id = "APW19990405.0101" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1028E" category = "5">
+
+	<title> Unabomber Trial </title>
+
+	<docsetA id = "D1028E-A">
+		<doc id = "XIE19971004.0214" />
+		<doc id = "XIE19971007.0176" />
+		<doc id = "XIE19980105.0053" />
+		<doc id = "XIE19971113.0007" />
+		<doc id = "XIE19961211.0315" />
+		<doc id = "XIE19970516.0041" />
+		<doc id = "XIE19970730.0060" />
+		<doc id = "XIE19970816.0034" />
+		<doc id = "XIE19970903.0033" />
+		<doc id = "XIE19970905.0283" />
+	</docsetA>
+
+	<docsetB id = "D1028E-B">
+		<doc id = "XIE19980106.0008" />
+		<doc id = "XIE19980106.0085" />
+		<doc id = "XIE19980106.0285" />
+		<doc id = "XIE19980107.0070" />
+		<doc id = "XIE19980108.0100" />
+		<doc id = "XIE19980109.0085" />
+		<doc id = "XIE19980123.0070" />
+		<doc id = "NYT19980625.0067" />
+		<doc id = "NYT19980701.0305" />
+		<doc id = "NYT19980820.0490" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1030F" category = "3">
+
+	<title> Ephedra </title>
+
+	<docsetA id = "D1030F-A">
+		<doc id = "NYT19991011.0240" />
+		<doc id = "XIE19980113.0178" />
+		<doc id = "NYT19990208.0225" />
+		<doc id = "XIE19970421.0060" />
+		<doc id = "NYT19980603.0106" />
+		<doc id = "NYT19980604.0106" />
+		<doc id = "NYT19980609.0319" />
+		<doc id = "NYT19990705.0133" />
+		<doc id = "NYT19990706.0052" />
+		<doc id = "NYT19980722.0410" />
+	</docsetA>
+
+	<docsetB id = "D1030F-B">
+		<doc id = "NYT19991101.0262" />
+		<doc id = "NYT19991213.0130" />
+		<doc id = "NYT20000307.0119" />
+		<doc id = "NYT20000307.0152" />
+		<doc id = "APW20000417.0105" />
+		<doc id = "NYT20000612.0218" />
+		<doc id = "XIE20000623.0235" />
+		<doc id = "NYT20000703.0264" />
+		<doc id = "NYT20000731.0180" />
+		<doc id = "XIE20000816.0249" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1031F" category = "4">
+
+	<title> Mangrove Forests </title>
+
+	<docsetA id = "D1031F-A">
+		<doc id = "NYT_ENG_20041230.0220" />
+		<doc id = "AFP_ENG_20041230.0385" />
+		<doc id = "AFP_ENG_20041230.0632" />
+		<doc id = "NYT_ENG_20041231.0035" />
+		<doc id = "XIN_ENG_20041231.0091" />
+		<doc id = "XIN_ENG_20050104.0124" />
+		<doc id = "APW_ENG_20050107.0022" />
+		<doc id = "XIN_ENG_20050116.0132" />
+		<doc id = "APW_ENG_20050119.0565" />
+		<doc id = "APW_ENG_20050122.0053" />
+	</docsetA>
+
+	<docsetB id = "D1031F-B">
+		<doc id = "AFP_ENG_20050124.0169" />
+		<doc id = "AFP_ENG_20050124.0294" />
+		<doc id = "AFP_ENG_20050125.0310" />
+		<doc id = "NYT_ENG_20050128.0169" />
+		<doc id = "AFP_ENG_20050130.0585" />
+		<doc id = "AFP_ENG_20050131.0821" />
+		<doc id = "APW_ENG_20050201.0225" />
+		<doc id = "APW_ENG_20050202.0041" />
+		<doc id = "XIN_ENG_20050202.0141" />
+		<doc id = "APW_ENG_20050212.0133" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1033F" category = "5">
+
+	<title> South Korean Wire Tapping </title>
+
+	<docsetA id = "D1033F-A">
+		<doc id = "AFP_ENG_20050725.0053" />
+		<doc id = "XIN_ENG_20050725.0057" />
+		<doc id = "AFP_ENG_20050725.0110" />
+		<doc id = "AFP_ENG_20050726.0066" />
+		<doc id = "AFP_ENG_20050726.0234" />
+		<doc id = "APW_ENG_20050726.0473" />
+		<doc id = "AFP_ENG_20050804.0145" />
+		<doc id = "AFP_ENG_20050805.0027" />
+		<doc id = "APW_ENG_20050805.0274" />
+		<doc id = "APW_ENG_20050810.0312" />
+	</docsetA>
+
+	<docsetB id = "D1033F-B">
+		<doc id = "AFP_ENG_20050828.0545" />
+		<doc id = "AFP_ENG_20051027.0073" />
+		<doc id = "APW_ENG_20051115.0109" />
+		<doc id = "XIN_ENG_20051115.0364" />
+		<doc id = "APW_ENG_20051116.0152" />
+		<doc id = "AFP_ENG_20051120.0244" />
+		<doc id = "APW_ENG_20051121.0143" />
+		<doc id = "APW_ENG_20051202.0433" />
+		<doc id = "APW_ENG_20051214.0654" />
+		<doc id = "AFP_ENG_20060207.0040" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1035G" category = "3">
+
+	<title> Agent Orange </title>
+
+	<docsetA id = "D1035G-A">
+		<doc id = "APW19981029.0204" />
+		<doc id = "APW19990211.0224" />
+		<doc id = "APW19990212.0071" />
+		<doc id = "APW19990212.0304" />
+		<doc id = "XIE19990402.0250" />
+		<doc id = "NYT19990515.0160" />
+		<doc id = "XIE19990529.0166" />
+		<doc id = "APW19980718.0011" />
+		<doc id = "APW19980724.0360" />
+		<doc id = "NYT19980907.0284" />
+	</docsetA>
+
+	<docsetB id = "D1035G-B">
+		<doc id = "APW19991015.0294" />
+		<doc id = "APW19991030.0100" />
+		<doc id = "NYT20000102.0030" />
+		<doc id = "XIE19991116.0316" />
+		<doc id = "APW20000303.0108" />
+		<doc id = "APW20000307.0025" />
+		<doc id = "APW20000316.0067" />
+		<doc id = "NYT20000328.0363" />
+		<doc id = "APW20000329.0093" />
+		<doc id = "APW19990820.0084" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1036G" category = "2">
+
+	<title> Dioxin Poisoning Yuschenko </title>
+
+	<docsetA id = "D1036G-A">
+		<doc id = "NYT_ENG_20041203.0213" />
+		<doc id = "LTW_ENG_20041211.0050" />
+		<doc id = "LTW_ENG_20041211.0053" />
+		<doc id = "NYT_ENG_20041211.0085" />
+		<doc id = "XIN_ENG_20041211.0213" />
+		<doc id = "LTW_ENG_20041212.0043" />
+		<doc id = "XIN_ENG_20041212.0253" />
+		<doc id = "AFP_ENG_20041213.0021" />
+		<doc id = "AFP_ENG_20041213.0097" />
+		<doc id = "XIN_ENG_20041213.0299" />
+	</docsetA>
+
+	<docsetB id = "D1036G-B">
+		<doc id = "LTW_ENG_20041214.0078" />
+		<doc id = "NYT_ENG_20041214.0220" />
+		<doc id = "NYT_ENG_20041214.0243" />
+		<doc id = "LTW_ENG_20041215.0120" />
+		<doc id = "AFP_ENG_20041217.0519" />
+		<doc id = "NYT_ENG_20041219.0098" />
+		<doc id = "AFP_ENG_20041220.0250" />
+		<doc id = "AFP_ENG_20041221.0280" />
+		<doc id = "XIN_ENG_20041223.0093" />
+		<doc id = "AFP_ENG_20041224.0289" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1037G" category = "4">
+
+	<title> Maryland Oysters </title>
+
+	<docsetA id = "D1037G-A">
+		<doc id = "NYT_ENG_20041014.0154" />
+		<doc id = "LTW_ENG_20041101.0081" />
+		<doc id = "LTW_ENG_20041112.0049" />
+		<doc id = "LTW_ENG_20041229.0088" />
+		<doc id = "LTW_ENG_20050110.0119" />
+		<doc id = "LTW_ENG_20050111.0109" />
+		<doc id = "LTW_ENG_20050124.0089" />
+		<doc id = "LTW_ENG_20050311.0019" />
+		<doc id = "LTW_ENG_20050311.0020" />
+		<doc id = "LTW_ENG_20050413.0078" />
+	</docsetA>
+
+	<docsetB id = "D1037G-B">
+		<doc id = "NYT_ENG_20050608.0060" />
+		<doc id = "LTW_ENG_20050707.0096" />
+		<doc id = "LTW_ENG_20050713.0054" />
+		<doc id = "LTW_ENG_20050804.0094" />
+		<doc id = "LTW_ENG_20050812.0147" />
+		<doc id = "NYT_ENG_20050814.0185" />
+		<doc id = "LTW_ENG_20050927.0115" />
+		<doc id = "APW_ENG_20051007.0206" />
+		<doc id = "LTW_ENG_20051115.0144" />
+		<doc id = "NYT_ENG_20060228.0252" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1038G" category = "1">
+
+	<title> Mt St Helens </title>
+
+	<docsetA id = "D1038G-A">
+		<doc id = "LTW_ENG_20041001.0122" />
+		<doc id = "XIN_ENG_20041001.0189" />
+		<doc id = "NYT_ENG_20041001.0279" />
+		<doc id = "APW_ENG_20041001.0415" />
+		<doc id = "AFP_ENG_20041001.0699" />
+		<doc id = "APW_ENG_20041002.0032" />
+		<doc id = "NYT_ENG_20041003.0001" />
+		<doc id = "APW_ENG_20041003.0028" />
+		<doc id = "NYT_ENG_20041003.0147" />
+		<doc id = "AFP_ENG_20041003.0398" />
+	</docsetA>
+
+	<docsetB id = "D1038G-B">
+		<doc id = "NYT_ENG_20041004.0031" />
+		<doc id = "AFP_ENG_20041004.0130" />
+		<doc id = "NYT_ENG_20041004.0282" />
+		<doc id = "NYT_ENG_20041004.0299" />
+		<doc id = "NYT_ENG_20041005.0035" />
+		<doc id = "LTW_ENG_20041005.0131" />
+		<doc id = "NYT_ENG_20041005.0231" />
+		<doc id = "LTW_ENG_20041006.0108" />
+		<doc id = "NYT_ENG_20041006.0255" />
+		<doc id = "AFP_ENG_20041006.0680" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1040G" category = "5">
+
+	<title> Robert Blake Murder Trial </title>
+
+	<docsetA id = "D1040G-A">
+		<doc id = "LTW_ENG_20050223.0057" />
+		<doc id = "APW_ENG_20050224.0084" />
+		<doc id = "APW_ENG_20050226.0007" />
+		<doc id = "LTW_ENG_20050302.0145" />
+		<doc id = "APW_ENG_20050302.0944" />
+		<doc id = "APW_ENG_20050303.0083" />
+		<doc id = "LTW_ENG_20050303.0152" />
+		<doc id = "LTW_ENG_20050303.0154" />
+		<doc id = "APW_ENG_20050304.0108" />
+		<doc id = "NYT_ENG_20050304.0204" />
+	</docsetA>
+
+	<docsetB id = "D1040G-B">
+		<doc id = "APW_ENG_20050305.0034" />
+		<doc id = "APW_ENG_20050308.0054" />
+		<doc id = "APW_ENG_20050310.1101" />
+		<doc id = "APW_ENG_20050311.1011" />
+		<doc id = "APW_ENG_20050315.0045" />
+		<doc id = "LTW_ENG_20050316.0160" />
+		<doc id = "NYT_ENG_20050316.0231" />
+		<doc id = "AFP_ENG_20050316.0862" />
+		<doc id = "LTW_ENG_20050317.0007" />
+		<doc id = "NYT_ENG_20050317.0022" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1045H" category = "4">
+
+	<title> Songhua River </title>
+
+	<docsetA id = "D1045H-A">
+		<doc id = "XIN_ENG_20051123.0056" />
+		<doc id = "XIN_ENG_20051123.0104" />
+		<doc id = "XIN_ENG_20051123.0372" />
+		<doc id = "XIN_ENG_20051124.0013" />
+		<doc id = "XIN_ENG_20051124.0118" />
+		<doc id = "XIN_ENG_20051124.0120" />
+		<doc id = "XIN_ENG_20051124.0149" />
+		<doc id = "XIN_ENG_20051124.0176" />
+		<doc id = "XIN_ENG_20051124.0203" />
+		<doc id = "APW_ENG_20051124.0263" />
+	</docsetA>
+
+	<docsetB id = "D1045H-B">
+		<doc id = "XIN_ENG_20051125.0004" />
+		<doc id = "XIN_ENG_20051125.0080" />
+		<doc id = "XIN_ENG_20051125.0119" />
+		<doc id = "XIN_ENG_20051125.0315" />
+		<doc id = "XIN_ENG_20051126.0020" />
+		<doc id = "XIN_ENG_20051126.0065" />
+		<doc id = "XIN_ENG_20051126.0073" />
+		<doc id = "NYT_ENG_20051126.0083" />
+		<doc id = "APW_ENG_20051126.0274" />
+		<doc id = "APW_ENG_20051126.0292" />
+	</docsetB>
+
+</topic>
+
+<topic id = "D1046H" category = "1">
+
+	<title> Tsunami Indonesia </title>
+
+	<docsetA id = "D1046H-A">
+		<doc id = "XIN_ENG_20041230.0105" />
+		<doc id = "XIN_ENG_20041230.0272" />
+		<doc id = "AFP_ENG_20041231.0013" />
+		<doc id = "AFP_ENG_20050104.0045" />
+		<doc id = "XIN_ENG_20050105.0031" />
+		<doc id = "APW_ENG_20050105.0088" />
+		<doc id = "XIN_ENG_20050105.0203" />
+		<doc id = "XIN_ENG_20050110.0141" />
+		<doc id = "XIN_ENG_20050110.0191" />
+		<doc id = "APW_ENG_20050110.0567" />
+	</docsetA>
+
+	<docsetB id = "D1046H-B">
+		<doc id = "XIN_ENG_20050112.0224" />
+		<doc id = "XIN_ENG_20050113.0004" />
+		<doc id = "AFP_ENG_20050113.0460" />
+		<doc id = "APW_ENG_20050114.0079" />
+		<doc id = "AFP_ENG_20050118.0099" />
+		<doc id = "APW_ENG_20050119.0825" />
+		<doc id = "APW_ENG_20050125.0239" />
+		<doc id = "XIN_ENG_20050127.0285" />
+		<doc id = "AFP_ENG_20050203.0033" />
+		<doc id = "XIN_ENG_20050203.0137" />
+	</docsetB>
+
+</topic>
+
+</TACtaskdata>
