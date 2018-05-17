@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 import json
+import sys
+
 from collections import OrderedDict
 from pycorenlp import StanfordCoreNLP
 
@@ -41,11 +43,16 @@ class CoreferenceResolver:
         #Set up the Stanford Toolkit
         nlp = StanfordCoreNLP('http://localhost:{}'.format(self.port))
 
+        # Limit request length
         output = nlp.annotate(text, properties={
             'annotators': 'coref',
             'pipelineLanguage': 'en',
             'outputFormat': 'json'
         })
+
+        if not isinstance(output, dict):
+            print("Invalid output returned for request length {} ('{}...'): '{}'".format(len(text), text[0:20], output), file=sys.stderr)
+            return []
 
         sentences = []
         for s in output['sentences']:

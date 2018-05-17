@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import json
 import os
 import unittest
 
@@ -11,6 +12,12 @@ class DocReaderTest(unittest.TestCase):
         self.aq2_root = '/dropbox/17-18/573/AQUAINT-2'
         self.eng_gw_root = '/dropbox/17-18/573/ENG-GW'
         self.doc_reader = DocReader(self.aq_root, self.aq2_root, self.eng_gw_root)
+
+    def test_read_docs(self):
+        # Read all docs from training test set
+        input_xml_filename = 'src/test_data/aquaint_topics.xml'
+        parsed = self.doc_reader.read_docs(input_xml_filename)
+        print(json.dumps(parsed))
 
     def test_resolve_path(self):
         test_data = [

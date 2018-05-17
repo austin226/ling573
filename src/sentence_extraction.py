@@ -27,6 +27,7 @@ class SentenceExtractor:
 
         summary = subprocess.getoutput(summary_command)
         sentences = self.parse_sentences(summary)
+        assert len(sentences) <= self.max_sent, "{} sentences extracted (max_sent={})".format(len(sentences), self.max_sent)
         return doc_id_list, sent_idx_list, sentences
 
     def parse_doc_id_list(self, extract):
@@ -55,8 +56,19 @@ class SentenceExtractor:
             Format of output is [1] text \n
                                 [2] text \n ... etc
         """
-        try:
-            lines = [line.strip().split(' ', 1)[1].strip() for line in perl_output.split('\n')]
-        except:
-            return []
-        return lines
+        sentences = []
+
+        sent_num = 0
+        s = ''
+        for raw_line in perl_output.split('\n'):
+            line = raw_line.strip()
+            if line.startswith('[{}]'.format(sent_num+1)):
+                if sent_num > 0:
+                    sentences.append(s.strip())
+                s = ''
+                sent_num += 1
+                s += line.split(' ', 1)[1].strip()
+            else:
+                s += ' ' + line.strip()
+        sentences.append(s.strip())
+        return sentences

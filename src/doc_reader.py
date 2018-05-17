@@ -8,21 +8,6 @@ from html.parser import HTMLParser, HTMLParseError
 
 class Aquaint1Parser(HTMLParser):
     # See document type definition at https://catalog.ldc.upenn.edu/docs/LDC2002T31/
-    output = {
-        'type': 'news story',   # Default to 'news story'; otherwise will be 'miscellaneous text'
-        'keywords': [],
-        'headlines': [],
-        'datelines': [],
-        'paragraphs': [],
-    }
-    on_correct_document = False
-    reading_docno = False
-    reading_doctype = False
-    reading_body = False
-    reading_slug = False
-    reading_headline = False
-    reading_text = False
-
     def get_output(self):
         return self.output
 
@@ -30,6 +15,23 @@ class Aquaint1Parser(HTMLParser):
         self.doc_id = doc_id
 
     # Override HTMLParser methods
+
+    def reset(self):
+        super().reset()
+        self.output = {
+            'type': 'news story',   # Default to 'news story'; otherwise will be 'miscellaneous text'
+            'keywords': [],
+            'headlines': [],
+            'datelines': [],
+            'paragraphs': [],
+        }
+        self.on_correct_document = False
+        self.reading_docno = False
+        self.reading_doctype = False
+        self.reading_body = False
+        self.reading_slug = False
+        self.reading_headline = False
+        self.reading_text = False
 
     def handle_starttag(self, tag, attrs):
         if tag == 'doc':
@@ -168,7 +170,9 @@ class DocReader:
                 print(e, file=sys.stderr)
                 # Skip this file
                 return None
-            return parser.get_output()
+            output = parser.get_output()
+            parser.close()
+            return output
 
         elif format_name == 'AQUAINT-2':
             # XML format
@@ -224,11 +228,10 @@ class DocReader:
                     if line.startswith('<DOCNO>') and doc_id in line:
                         reading_doc = True
                         output_lines.append(lines[i-1])
-                    elif line.startswith('</DOCNO>'):
-                        output_lines.extend(lines[i:i+1])
-                        break
                     if reading_doc:
                         output_lines.append(line)
+                        if (line.startswith('</DOC>')):
+                            break
             elif format_name == 'ENG-GW':
                 for i, line in enumerate(lines):
                     if line.startswith('<DOC') and doc_id in line:
@@ -271,8 +274,6 @@ class DocReader:
                 doc_id = doc.get('id')
                 doc_path, doc_format = self.resolve_path(doc_id)
                 try:
-                    if doc_format == 'AQUAINT':
-                        continue
                     doc_contents = self.parse_doc(doc_path, doc_format, doc_id)
                     parsed_doc_count += 1
                 except FileNotFoundError:

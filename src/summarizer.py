@@ -9,8 +9,9 @@ class Summarizer:
     that forms a summary.
     '''
 
-    def __init__(self, coreference_resolver, content_selector, info_order, sentence_realizer):
+    def __init__(self, coreference_resolver, segmenter, content_selector, info_order, sentence_realizer):
         self.coreference_resolver = coreference_resolver
+        self.segmenter = segmenter
         self.content_selector = content_selector
         self.info_order = info_order
         self.sentence_realizer = sentence_realizer
@@ -27,8 +28,15 @@ class Summarizer:
             output_filename = '{}/{}'.format(topic_dir, doc_id)
             text = ' '.join(doc_info['paragraphs'])
             sentences = self.coreference_resolver.resolve(text)
+            print("{} / {}: Resolved {} sentences.".format(topic_id, doc_id, len(sentences)))
+            # Segement the sentences further as necessary
+            segments = []
+            for s in sentences:
+                segments.extend(self.segmenter.process(s))
+            print("{} / {}: Segemented into {} sentences.".format(topic_id, doc_id, len(segments)))
+
             with open(output_filename, 'w', encoding='utf8') as f:
-                for p in sentences:
+                for p in segments:
                     f.write(p + '\n')
 
         # Convert sentences to docsent files using text2cluster.pl
@@ -47,6 +55,7 @@ class Summarizer:
         self._build_cluster(topic_id, docset)
 
         doc_id_list, sent_idx_list, sentences, simplified_sentences  = self.content_selector.select(topic_id)
+        print("{}: Selected {} sentences.".format(topic_id, len(sentences)))
         ordered_sentences = self.info_order.process(doc_id_list, sent_idx_list, sentences)
         realized_sentences = self.sentence_realizer.process(ordered_sentences, simplified_sentences)
         return realized_sentences

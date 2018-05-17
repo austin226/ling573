@@ -23,6 +23,19 @@ class SentenceExtractorTest(unittest.TestCase):
         doc_ids = self.extractor.parse_doc_id_list(extract)
         print(doc_ids)
 
+    def testParseSentences(self):
+        perl_output = '''[1] a b c d e
+f g h i j
+k l m n o
+p q r
+[2] s t u v w
+[3] x y z
+[4] 1 23 5643
+'''
+        sentences = self.extractor.parse_sentences(perl_output)
+        expected = ['a b c d e f g h i j k l m n o p q r', 's t u v w', 'x y z', '1 23 5643']
+        self.assertEqual(expected, sentences)
+
     def testExtractor(self):
         # For testing purposes, instantiate an extractor and run
         # on the default cluster (called GA3) available in the mead/data directory.
