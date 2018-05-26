@@ -10,5 +10,21 @@ class SentenceRealizer:
         '''
         Use both full and simplified format for each sentence to form a coherent list of sentences
         '''
-        # TODO
+
+        # Remove spaces before any non-word
+        sentences = [self.remove_extra_spaces(s) for s in sentences]
         return sentences
+
+    def remove_extra_spaces(self, sentence):
+        tokens = sentence.split(' ')
+        output = []
+        for t in tokens:
+            if t[0].isalnum() or t == '--' or t == '_':
+                output.append(t)
+            elif not output:
+                # No tokens in output yet
+                output.append(t)
+            else:
+                # Token is not a word, append to last token in output
+                output[-1] += t
+        return ' '.join(output)
