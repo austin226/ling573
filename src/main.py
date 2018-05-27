@@ -28,9 +28,8 @@ def print_sentences(output_base_dir, topic_id, sentences):
 def build_content_selector():
     extractor = SentenceExtractor(5) # max_sent = 5
     simplifier = SentenceSimplifier()
-    abbremover = AbbrevRemover()
 
-    content_selector = ContentSelector(extractor, simplifier, abbremover)
+    content_selector = ContentSelector(extractor, simplifier)
     return content_selector
 
 def build_summarizer(core_nlp_port):
