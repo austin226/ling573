@@ -4,6 +4,7 @@ import os
 import sys
 import traceback
 
+from abbrev_remover import AbbrevRemover
 from content_selection import ContentSelector
 from coreference import CoreferenceResolver
 from doc_reader import DocReader
@@ -27,8 +28,9 @@ def print_sentences(output_base_dir, topic_id, sentences):
 def build_content_selector():
     extractor = SentenceExtractor(5) # max_sent = 5
     simplifier = SentenceSimplifier()
+    abbremover = AbbrevRemover()
 
-    content_selector = ContentSelector(extractor, simplifier)
+    content_selector = ContentSelector(extractor, simplifier, abbremover)
     return content_selector
 
 def build_summarizer(core_nlp_port):
