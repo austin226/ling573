@@ -12,6 +12,9 @@ from nltk.corpus import wordnet as wn
 nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
 
+SIMILARITY_WEIGHT = 0.5
+CHRONOLOGICAL_WEIGHT = 0.5
+
 #input object is expected to have the following for each line:
 #date sequence 'sentence' with date formatted as YYYYMMDDHHSS; sequence represents intra-document sentence ordering
 #when one document has multiple sentences. sentence represents the actual sentence
@@ -115,11 +118,15 @@ class InfoOrder:
         pair = list()
         for s1 in range(0, len(sentences)):
             for s2 in range(s1+1, len(sentences)):
-                similarity = self.symmetric_sentence_similarity(sentences[s1], sentences[s2], sim_cache, synset_cache)
+                distance = s2 - s1
+                if distance < 0:
+                    distance = -1 * distance + 1
+                similarity = CHRONOLOGICAL_WEIGHT * (1/distance) + SIMILARITY_WEIGHT * self.symmetric_sentence_similarity(sentences[s1], sentences[s2], sim_cache, synset_cache)
                 if similarity > max_similarity:
                     max_similarity = similarity
-                    pair = [sentences[s1], sentences[s2]]
-        return pair
+                    pair = [[sentences[s1], s1], [sentences[s2], s2]]
+                    indices = [s1, s2]
+        return pair, indices
 
 
     def process(self, doc_id_list, sent_idx_list, sentences):
@@ -156,30 +163,43 @@ class InfoOrder:
         #Find the 2 closest sentences
         sim_cache = {}
         synset_cache = {}
-        similarityOrderedSentences = self.initial_compare(chronologicalOrderedSentences, sim_cache, synset_cache)
-        chronologicalOrderedSentences.remove(similarityOrderedSentences[0])
-        chronologicalOrderedSentences.remove(similarityOrderedSentences[1])
+        similarityOrderedSentences, processedSentenceIndices = self.initial_compare(chronologicalOrderedSentences, sim_cache, synset_cache)
+        #chronologicalOrderedSentences.remove(similarityOrderedSentences[0])
+        #chronologicalOrderedSentences.remove(similarityOrderedSentences[1])
         #Check both sides of the list of processed sentences to find the closest match
-        while len(chronologicalOrderedSentences) > 0:
+        while len(chronologicalOrderedSentences) > len(similarityOrderedSentences):
             max_similarity = -1
-            for s in chronologicalOrderedSentences:
-                similarity = self.symmetric_sentence_similarity(similarityOrderedSentences[0], s, sim_cache, synset_cache)
-                if similarity > max_similarity:
-                    max_similarity = similarity
-                    candidate = [0, s]
-            for s in chronologicalOrderedSentences:
-                similarity = self.symmetric_sentence_similarity(similarityOrderedSentences[-1], s, sim_cache, synset_cache)
-                if similarity > max_similarity:
-                    max_similarity = similarity
-                    candidate = [len(chronologicalOrderedSentences), s]
-
+            for s in range(0, len(chronologicalOrderedSentences)):
+                if s not in processedSentenceIndices:
+                    distance = similarityOrderedSentences[0][1] - s
+                    if distance < 0:
+                        distance = -1 * distance + 1
+                    similarity = CHRONOLOGICAL_WEIGHT * (1/distance) + SIMILARITY_WEIGHT * self.symmetric_sentence_similarity(similarityOrderedSentences[0][0], chronologicalOrderedSentences[s], sim_cache, synset_cache)
+                    if similarity > max_similarity:
+                        max_similarity = similarity
+                        candidate = [0, chronologicalOrderedSentences[s], s]
+            for  s in range(0, len(chronologicalOrderedSentences)):
+                if s not in processedSentenceIndices:
+                    distance = similarityOrderedSentences[-1][1] - s
+                    if distance < 0:
+                        distance = -1 * distance + 1
+                    similarity = CHRONOLOGICAL_WEIGHT * (
+                            1 / distance) + SIMILARITY_WEIGHT * self.symmetric_sentence_similarity(
+                        similarityOrderedSentences[-1][0], chronologicalOrderedSentences[s], sim_cache, synset_cache)
+                    if similarity > max_similarity:
+                        max_similarity = similarity
+                        candidate = [len(similarityOrderedSentences), chronologicalOrderedSentences[s], s]
             if not candidate:
                 continue
             #add the sentence to similarity ordered, remove from chronologically ordered
-            chronologicalOrderedSentences.remove(candidate[1])
-            similarityOrderedSentences.insert(candidate[0], candidate[1])
-            
-        return similarityOrderedSentences
+            #chronologicalOrderedSentences.remove(candidate[1])
+            similarityOrderedSentences.insert(candidate[0], [candidate[1], candidate[2]])
+
+            processedSentenceIndices.append(candidate[2])
+        orderedSentences = list()
+        for s in similarityOrderedSentences:
+            orderedSentences.append(s[0])
+        return orderedSentences
 
     def to_numeric_list(self, doc_id_list):
         '''
