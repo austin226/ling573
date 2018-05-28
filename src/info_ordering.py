@@ -12,7 +12,7 @@ from nltk.corpus import wordnet as wn
 nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
 
-SIMILARITY_WEIGHT = 0.75
+SIMILARITY_WEIGHT = 0.25
 CHRONOLOGICAL_WEIGHT = 1.0 - SIMILARITY_WEIGHT
 
 #input object is expected to have the following for each line:
