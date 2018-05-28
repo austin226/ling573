@@ -35,6 +35,9 @@ class Summarizer:
                 segments.extend(self.segmenter.process(s))
             print("{} / {}: Segemented into {} sentences.".format(topic_id, doc_id, len(segments)))
 
+            # Trim the sentences using the sentence_realizer
+            segments = self.sentence_realizer.process(segments)
+
             with open(output_filename, 'w', encoding='utf8') as f:
                 for p in segments:
                     f.write(p + '\n')
