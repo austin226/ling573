@@ -14,7 +14,7 @@ class Coreference:
         self.endIndex = data['endIndex']
 
     def __repr__(self):
-        return "{} {} {} {} {}".format(self.text, self.replacementText, self.startIndex, self.sentenceIndex, self.endIndex)
+        return "{} {} {} {}".format(self.replacementText, self.sentenceIndex, self.startIndex, self.endIndex)
 
 class CoreferenceResolver:
     def __init__(self, port):
@@ -59,6 +59,7 @@ class CoreferenceResolver:
             sentences.append(OrderedDict([(t['index'], t['originalText']) for t in s['tokens']]))
 
         coreferences = []
+        resolved_sent_indexes_by_replacement_text = {}
 
         #loop through coreference dictionary
         for r, corefs in output['corefs'].items():
@@ -66,10 +67,16 @@ class CoreferenceResolver:
             for s in corefs:
                 if s['isRepresentativeMention']:
                     replacementText = s['text']
+                    representativeSentNum = s['sentNum']
                     break
+            if not replacementText:
+                continue
+            if replacementText not in resolved_sent_indexes_by_replacement_text:
+                resolved_sent_indexes_by_replacement_text[replacementText] = set()
+
             #replace representative mention
             for s in corefs:
-                if not s['isRepresentativeMention']:
+                if not s['isRepresentativeMention'] and s['sentNum'] != representativeSentNum:
                     coref = Coreference(s)
                     coref.replacementText = replacementText
                     coreferences.append(coref)
@@ -79,6 +86,11 @@ class CoreferenceResolver:
         for coref in coreferences:
             if coref.sentenceIndex not in corefs_by_sentence:
                 corefs_by_sentence[coref.sentenceIndex] = []
+            if coref.sentenceIndex in resolved_sent_indexes_by_replacement_text[coref.replacementText]:
+                # Coreference already resolved for this sentence, don't do it more than once
+                continue
+            resolved_sent_indexes_by_replacement_text[coref.replacementText].add(coref.sentenceIndex)
+
             corefs_by_sentence[coref.sentenceIndex].append(coref)
 
         # Replace tokens in each sentence

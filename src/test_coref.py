@@ -22,13 +22,13 @@ class CoreferenceResolverTest(unittest.TestCase):
 
     def testResolve(self):
         text = '''
-        Bill Clinton was governor of Arkansas. From humble beginnings he rose to the highest office in the land. Clinton was involved in a private affair.
+        Bill Clinton was governor of his home state of Arkansas. From humble beginnings he rose to the highest office in the land. Clinton was involved in a private affair with someone he knew.
         '''
 
         expected = [
-            'Bill Clinton was governor of Arkansas .',
+            'Bill Clinton was governor of his home state of Arkansas .',
             'From humble beginnings Bill Clinton rose to the highest office in the land .',
-            'Bill Clinton was involved in a private affair .'
+            'Bill Clinton was involved in a private affair with someone he knew .'
         ]
         s = self.coref.resolve(text)
         self.assertEqual(expected, s)
