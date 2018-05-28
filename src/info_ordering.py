@@ -12,8 +12,8 @@ from nltk.corpus import wordnet as wn
 nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
 
-SIMILARITY_WEIGHT = 0.5
-CHRONOLOGICAL_WEIGHT = 0.5
+SIMILARITY_WEIGHT = 0.75
+CHRONOLOGICAL_WEIGHT = 1.0 - SIMILARITY_WEIGHT
 
 #input object is expected to have the following for each line:
 #date sequence 'sentence' with date formatted as YYYYMMDDHHSS; sequence represents intra-document sentence ordering
