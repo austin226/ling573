@@ -34,6 +34,8 @@ class SentenceRealizer:
         tokens = sentence.split(' ')
         output = []
         for t in tokens:
+            if not t:
+                continue
             if t[0].isalnum() or t == '--' or t == '_':
                 output.append(t)
             elif not output:
@@ -64,6 +66,9 @@ class SentenceRealizer:
         '''
         for i, token_pos in enumerate(tokens_pos):
             token, pos = token_pos
+            if i > len(tokens_pos) / 2:
+                # Don't cut more than half of the sentence
+                return tokens_pos
             if pos not in ['NNP', 'CD', ',', ':']:
                 # We have reached a non-dateline token before the ':' -- return input
                 return tokens_pos
