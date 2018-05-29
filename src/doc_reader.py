@@ -37,8 +37,9 @@ class Aquaint1Parser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         if tag == 'doc':
             for name, value in attrs:
-                if name == 'id' and value == 'doc_id':
+                if name == 'id' and value == self.doc_id:
                     self.on_correct_document = True
+                    break
         elif tag == 'docno':
             self.reading_docno = True
         elif self.on_correct_document:
@@ -60,15 +61,14 @@ class Aquaint1Parser(HTMLParser):
         elif self.on_correct_document:
             if self.reading_doctype:
                 self.output['type'] = data.strip().lower()
-            elif self.reading_body:
-                if self.reading_slug:
-                    # TODO parse slugs into multiple keywords, not just 1
-                    self.output['keywords'].append(data.strip())
-                elif self.reading_headline:
-                    self.output['headlines'].append(data.strip())
-                elif self.reading_text:
-                    # TODO parse text into multiple paragraphs, not just 1
-                    self.output['paragraphs'].append(data.strip())
+            elif self.reading_slug:
+                # TODO parse slugs into multiple keywords, not just 1
+                self.output['keywords'].append(data.strip())
+            elif self.reading_headline:
+                self.output['headlines'].append(data.strip())
+            elif self.reading_text:
+                # TODO parse text into multiple paragraphs, not just 1
+                self.output['paragraphs'].append(data.strip())
 
     def handle_endtag(self, tag):
         if tag == 'docno':
@@ -239,9 +239,9 @@ class DocReader:
                         if line.strip().startswith('<DOC') and doc_id in line:
                             reading_doc = True
                         if reading_doc:
-                            if not line:
+                            if not line.strip():
                                 continue
-                            output_lines.append(line)
+                            output_lines.append(line.strip())
                             if '</DOC>' in line:
                                 break
                 else:
