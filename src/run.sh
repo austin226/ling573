@@ -34,7 +34,9 @@ set +e
 while (( "$#" >= 2 )); do
   INPUT_XML_FILENAME=$1
   OUTPUT_DIR=$(realpath $2)
+  echo "python ${PROJECT_ROOT}/src/main.py $INPUT_XML_FILENAME $OUTPUT_DIR $PORT"
   python ${PROJECT_ROOT}/src/main.py $INPUT_XML_FILENAME $OUTPUT_DIR $PORT
+  echo "Finished python call."
   shift 2
 done
 

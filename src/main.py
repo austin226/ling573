@@ -59,6 +59,8 @@ if __name__ == '__main__':
     output_base_dir = sys.argv[2]
     core_nlp_port = int(sys.argv[3])
 
+    print("Starting summarizer with input_xml_filename='{}', output_base_dir='{}', core_nlp_port='{}'".format(input_xml_filename, output_base_dir, core_nlp_port))
+
     os.makedirs(output_base_dir, exist_ok=True)
 
     # Initialize document reader with AQUAINT, AQUAINT-2, and ENG-GW root paths
