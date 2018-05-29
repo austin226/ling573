@@ -4,6 +4,7 @@ import os
 import sys
 import traceback
 
+from abbrev_remover import AbbrevRemover
 from content_selection import ContentSelector
 from coreference import CoreferenceResolver
 from doc_reader import DocReader

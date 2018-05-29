@@ -5,6 +5,7 @@ import sys
 
 from collections import OrderedDict
 from pycorenlp import StanfordCoreNLP
+from abbrev_remover import AbbrevRemover
 
 class Coreference:
     def __init__(self, data):
@@ -19,6 +20,7 @@ class Coreference:
 class CoreferenceResolver:
     def __init__(self, port):
         self.port = port
+        self.abbrevremover = AbbrevRemover
 
     def replace_tokens(self, tokens, replacementText, startIndex, endIndex):
         for i in range(startIndex, endIndex):
@@ -39,6 +41,9 @@ class CoreferenceResolver:
         This will accept a block of text, and return
         a list of sentences with coreferences resolved.
         '''
+        
+        # replace full stops in abbreviations
+        text = abbrevremover.remove_abbs(text)
 
         #Set up the Stanford Toolkit
         nlp = StanfordCoreNLP('http://localhost:{}'.format(self.port))
