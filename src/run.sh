@@ -9,8 +9,6 @@ set -e
 
 export PROJECT_ROOT=$(pwd)
 export SERVER_LOG=$PROJECT_ROOT/var/log/StanfordCoreNLPServer.$(date +%s).log
-INPUT_XML_FILENAME=$1
-OUTPUT_DIR=$(realpath $2)
 
 mkdir -p var/log
 mkdir -p var/tmp
@@ -32,6 +30,12 @@ echo "CoreNLP Port: ${PORT}"
 pip install -r ${PROJECT_ROOT}/src/requirements.txt
 
 set +e
-python ${PROJECT_ROOT}/src/main.py $INPUT_XML_FILENAME $OUTPUT_DIR $PORT
+
+while (( "$#" >= 2 )); do
+  INPUT_XML_FILENAME=$1
+  OUTPUT_DIR=$(realpath $2)
+  python ${PROJECT_ROOT}/src/main.py $INPUT_XML_FILENAME $OUTPUT_DIR $PORT
+  shift 2
+done
 
 deactivate
