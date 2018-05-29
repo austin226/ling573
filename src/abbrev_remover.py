@@ -14,7 +14,7 @@ class AbbrevRemover:
         if "." not in text or text == "":  # Do not traverse text if it contains no full stops
             return text
         else:
-            for abb in abbrevs:
+            for abb in self.abbrevs:
                 if abb not in text:  # Disregard abbreviations not present in text
                     continue
                 else:
