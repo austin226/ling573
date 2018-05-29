@@ -3,14 +3,15 @@
 import re
 
 class AbbrevRemover:
-    def remove_abbs(text: str):
-        abbrevs = ["a.m.", "acct.", "A.D.", "approx.", "Ave.", "B.A.", "B.C.", "Blvd.", "Bros.", "B.S.", "C.E.", "cf.",
+    def __init__(self):
+        self.abbrevs = ["a.m.", "acct.", "A.D.", "approx.", "Ave.", "B.A.", "B.C.", "Blvd.", "Bros.", "B.S.", "C.E.", "cf.",
                    "cm.", "Dr.", "e.g.", "et al.", "etc.", "fig.", "ft.", "gal.", "I.D.", "i.e.", "in.", "km.", "L.A.",
                    "M.A.", "M.B.A.", "mi.", "m.p.h.", "Mr.", "Mrs.", "M.S.", "Ms.", "Mt.", "N.Y.", "no.", "nos.",
                    "p.", "Ph.D", "p.m.", "pp.", "qv.", "Rd.", "Rt.", "R.S.V.P.", "sq.", "St.", "U.S.", "U.S.A.",
-                   "V.I.P.", "vol."]
-
-        if "." not in text:  # Do not traverse text if it contains no full stops
+                   "V.I.P.", "vol."] 
+    
+    def remove_abbs(text: str):
+        if "." not in text or text == "":  # Do not traverse text if it contains no full stops
             return text
         else:
             for abb in abbrevs:
