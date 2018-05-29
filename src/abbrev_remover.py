@@ -10,7 +10,7 @@ class AbbrevRemover:
                    "p.", "Ph.D", "p.m.", "pp.", "qv.", "Rd.", "Rt.", "R.S.V.P.", "sq.", "St.", "U.S.", "U.S.A.",
                    "V.I.P.", "vol."] 
     
-    def remove_abbs(text: str):
+    def remove_abbs(self, text):
         if "." not in text or text == "":  # Do not traverse text if it contains no full stops
             return text
         else:
