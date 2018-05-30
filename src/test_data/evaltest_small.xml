@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE TACtaskdata [
+
+<!-- ======================================================================
+      TAC 2011 Guided Summarization task data definition
+
+      Written 2011-06-01 by Karolina Owczarzak <karolina.owczarzak@nist.gov>
+     ====================================================================== -->
+
+    <!ELEMENT TACtaskdata  (topic+)           >
+    <!ELEMENT topic       (title, docsetA, docsetB) >
+    <!ELEMENT title       (#PCDATA)           >
+    <!ELEMENT docsetA     (doc+)              >
+    <!ELEMENT docsetB     (doc+)              >
+    <!ELEMENT doc          EMPTY              >		       
+
+    <!ATTLIST TACtaskdata
+                      year    CDATA              #REQUIRED
+		      track   (SUMMARIZATION)    #REQUIRED
+                      task    (GUIDED)           #REQUIRED
+		      dataset (SAMPLE|TEST)      #REQUIRED >
+
+    <!ATTLIST topic  id       ID    #REQUIRED 
+		     category CDATA #REQUIRED >
+
+    <!ATTLIST docsetA  id     ID    #REQUIRED >
+
+    <!ATTLIST docsetB  id     ID    #REQUIRED >
+
+    <!ATTLIST doc      id     CDATA #REQUIRED >   
+
+
+<!-- ====================================================================== -->
+]>
+
+<TACtaskdata year="2011" track="SUMMARIZATION" task="GUIDED"  dataset="TEST">
+
+<topic id = "D1101A" category = "2">
+
+	<title> Amish Shooting </title>
+
+	<docsetA id = "D1101A-A">
+		<doc id = "AFP_ENG_20061002.0523" />
+		<doc id = "APW_ENG_20061002.1126" />
+		<doc id = "APW_ENG_20061002.1245" />
+		<doc id = "LTW_ENG_20061003.0126" />
+		<doc id = "LTW_ENG_20061003.0131" />
+		<doc id = "APW_ENG_20061003.0134" />
+		<doc id = "APW_ENG_20061003.1335" />
+		<doc id = "APW_ENG_20061004.1377" />
+		<doc id = "APW_ENG_20061004.1882" />
+		<doc id = "APW_ENG_20061005.1272" />
+	</docsetA>
+
+	<docsetB id = "D1101A-B">
+		<doc id = "APW_ENG_20061008.0844" />
+		<doc id = "APW_ENG_20061009.1245" />
+		<doc id = "NYT_ENG_20061010.0302" />
+		<doc id = "APW_ENG_20061010.1107" />
+		<doc id = "APW_ENG_20061011.1995" />
+		<doc id = "APW_ENG_20061014.0918" />
+		<doc id = "APW_ENG_20061020.1355" />
+		<doc id = "APW_ENG_20061220.1358" />
+		<doc id = "APW_ENG_20070118.1425" />
+		<doc id = "NYT_ENG_20070130.0192" />
+	</docsetB>
+
+</topic>
+
+</TACtaskdata>

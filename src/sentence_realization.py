@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
+import nltk
 import re
+
+from nltk import word_tokenize
 
 class SentenceRealizer:
     '''
@@ -8,7 +11,7 @@ class SentenceRealizer:
     converting a set of sentences into a coherent narrative.
     '''
 
-    def process(self, sentences, simplified):
+    def process(self, sentences, simplified=[]):
         '''
         Use both full and simplified format for each sentence to form a coherent list of sentences
         '''
@@ -20,8 +23,8 @@ class SentenceRealizer:
     def compress_sentence(self, sentence):
         # Use sentence trimming rules similar to CLASSY 2006
         # Conroy, John & Schlesinger, Judith & O'leary, Dianne & Stewart, Jade. (2018). Back to basics: Classy 2006.
-        sentence = self.remove_extra_spaces(sentence)
         sentence = self.remove_extraneous_words(sentence)
+        sentence = self.remove_extra_spaces(sentence)
         sentence = sentence.strip()
         if len(sentence) > 0:
             sentence = sentence[0].upper() + sentence[1:]
@@ -31,6 +34,8 @@ class SentenceRealizer:
         tokens = sentence.split(' ')
         output = []
         for t in tokens:
+            if not t:
+                continue
             if t[0].isalnum() or t == '--' or t == '_':
                 output.append(t)
             elif not output:
@@ -43,6 +48,31 @@ class SentenceRealizer:
 
     def remove_extraneous_words(self, sentence):
         # Remove extraneous words that appear in a sentence, including date lines, editor's comments, and so on.
-        # Remove date lines
-        sentence = re.sub('^[A-Z ]+ _', '', sentence)
-        return sentence
+        tokens = word_tokenize(sentence)
+
+        # Replace '_' tokens with '--'
+        tokens = ['--' if t == '_' else t for t in tokens]
+
+        tokens_pos = nltk.pos_tag(tokens)
+        tokens_pos = self.remove_dateline(tokens_pos)
+
+        tokens = [token_pos[0] for token_pos in tokens_pos]
+        return ' '.join(tokens)
+
+    def remove_dateline(self, tokens_pos):
+        '''
+        A dateline consists of 'NNP', 'CD', and ',' tokens followed by a ':' token
+        If tokens_pos begins with such a sequence, remove that sequence
+        '''
+        for i, token_pos in enumerate(tokens_pos):
+            token, pos = token_pos
+            if i > len(tokens_pos) / 2:
+                # Don't cut more than half of the sentence
+                return tokens_pos
+            if pos not in ['NNP', 'CD', ',', ':']:
+                # We have reached a non-dateline token before the ':' -- return input
+                return tokens_pos
+            if pos == ':':
+                # Return all tokens after the ':' token
+                return tokens_pos[i+1:]
+        return tokens_pos

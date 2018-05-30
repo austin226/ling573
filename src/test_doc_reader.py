@@ -26,6 +26,7 @@ class DocReaderTest(unittest.TestCase):
             ('NYT19990421.0284', (self.aq_root+'/nyt/1999/19990421_NYT', 'AQUAINT')),
             ('XIN_ENG_20050415.0040', (self.aq2_root+'/data/xin_eng/xin_eng_200504.xml', 'AQUAINT-2')),
             ('APW_ENG_20061002.1245', (self.eng_gw_root+'/data/apw_eng/apw_eng_200610.gz', 'ENG-GW')),
+            ('APW_ENG_20061003.0134', (self.eng_gw_root+'/data/apw_eng/apw_eng_200610.gz', 'ENG-GW')),
         ]
         for doc_id, path in test_data:
             with self.subTest():
@@ -39,6 +40,7 @@ class DocReaderTest(unittest.TestCase):
         test_data = [
             ('/corpora/LDC/LDC02T31/apw/1998/19980601_APW_ENG', 'AQUAINT', 'APW19980601.0007'),
             ('/corpora/LDC/LDC08T25/data/apw_eng/apw_eng_200601.xml', 'AQUAINT-2', 'APW_ENG_20060101.0027'),
+            ('/corpora/LDC/LDC11T07/data/apw_eng/apw_eng_200610.gz', 'ENG-GW', 'APW_ENG_20061003.0134'),
         ]
         for path, format_name, doc_id in test_data:
             content = self.doc_reader.parse_doc(path, format_name, doc_id)

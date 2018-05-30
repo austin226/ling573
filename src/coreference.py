@@ -20,7 +20,7 @@ class Coreference:
 class CoreferenceResolver:
     def __init__(self, port):
         self.port = port
-        self.abbrevremover = AbbrevRemover
+        self.abbrevremover = AbbrevRemover()
 
     def replace_tokens(self, tokens, replacementText, startIndex, endIndex):
         for i in range(startIndex, endIndex):
@@ -43,7 +43,7 @@ class CoreferenceResolver:
         '''
         
         # replace full stops in abbreviations
-        text = abbrevremover.remove_abbs(text)
+        text = self.abbrevremover.remove_abbs(text)
 
         #Set up the Stanford Toolkit
         nlp = StanfordCoreNLP('http://localhost:{}'.format(self.port))
