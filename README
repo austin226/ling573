@@ -10,6 +10,7 @@
     ```
 
 # Notes
+- If you get an error message like "invalid interpreter (/bin/sh) specified on first line of script", run the following to fix any issues with unix line endings: `dos2unix src/*`
 - Script must be invoked from the base directory of this project.
 - The script will log to stdout and stderr, but all summaries will be placed in the OUTPUT_DIR
 - Script will write intermediate files in the var/ directory
