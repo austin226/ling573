@@ -5,7 +5,8 @@
 
 ## Example:
     ```
-    python3 src/main.py /dropbox/17-18/573/Data/Documents/devtest/GuidedSumm10_test_topics.xml outputs/D3/
+    python3 src/main.py /dropbox/17-18/573/Data/Documents/devtest/GuidedSumm10_test_topics.xml outputs/D4_devtest/
+    python3 src/main.py /dropbox/17-18/573/Data/Documents/evaltest/GuidedSumm11_test_topics.xml outputs/D4_evaltest/
     ```
 
 # Notes
@@ -19,9 +20,18 @@
     Background server instances may be found via `ps aux | grep "$(whoami).*Server"`
 
 # ROUGE Evaluation
+## Devtest
     ```
     /dropbox/17-18/573/code/ROUGE/ROUGE-1.5.5.pl \
       -e /dropbox/17-18/573/code/ROUGE/data \
       -a -n 4 -x -m -c 95 -r 1000 -f A -p 0.5 -t 0 -l 100 -s \
-      -d src/ROUGE.conf.xml
+      -d src/ROUGE_devtest.conf.xml
+    ```
+
+## Evaltest
+    ```
+    /dropbox/17-18/573/code/ROUGE/ROUGE-1.5.5.pl \
+      -e /dropbox/17-18/573/code/ROUGE/data \
+      -a -n 4 -x -m -c 95 -r 1000 -f A -p 0.5 -t 0 -l 100 -s \
+      -d src/ROUGE_evaltest.conf.xml
     ```
