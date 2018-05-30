@@ -43,10 +43,12 @@ def build_summarizer(core_nlp_port):
 
 def init_dirs():
     # Create temp directories for intermediate files
+    print('Initializing temp dirs...')
     base_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
     tmp_dirs = ['docs']
     for d in tmp_dirs:
         os.makedirs('{}/var/{}/'.format(base_dir, d), exist_ok=True)
+    print('Initialized.')
 
 if __name__ == '__main__':
     if len(sys.argv) < 4:
