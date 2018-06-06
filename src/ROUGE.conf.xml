@@ -1,646 +1,618 @@
 <ROUGE_EVAL version="1.5.5">
-  <EVAL ID="D1001-A.M.100.A">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1101-A.M.100.A">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1001-A.M.100.A.7</P>
+      <P ID="7">D1101-A.M.100.A.7</P>
     </PEERS>
     <MODELS>
-      <M ID="A">D1001-A.M.100.A.A</M>
-      <M ID="F">D1001-A.M.100.A.F</M>
-      <M ID="B">D1001-A.M.100.A.B</M>
-      <M ID="H">D1001-A.M.100.A.H</M>
+      <M ID="C">D1101-A.M.100.A.C</M>
+      <M ID="B">D1101-A.M.100.A.B</M>
+      <M ID="A">D1101-A.M.100.A.A</M>
+      <M ID="D">D1101-A.M.100.A.D</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1002-A.M.100.A">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1102-A.M.100.A">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1002-A.M.100.A.7</P>
+      <P ID="7">D1102-A.M.100.A.7</P>
     </PEERS>
     <MODELS>
-      <M ID="D">D1002-A.M.100.A.D</M>
-      <M ID="C">D1002-A.M.100.A.C</M>
-      <M ID="B">D1002-A.M.100.A.B</M>
-      <M ID="A">D1002-A.M.100.A.A</M>
+      <M ID="A">D1102-A.M.100.A.A</M>
+      <M ID="G">D1102-A.M.100.A.G</M>
+      <M ID="E">D1102-A.M.100.A.E</M>
+      <M ID="F">D1102-A.M.100.A.F</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1003-A.M.100.A">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1103-A.M.100.A">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1003-A.M.100.A.7</P>
+      <P ID="7">D1103-A.M.100.A.7</P>
     </PEERS>
     <MODELS>
-      <M ID="A">D1003-A.M.100.A.A</M>
-      <M ID="C">D1003-A.M.100.A.C</M>
-      <M ID="E">D1003-A.M.100.A.E</M>
-      <M ID="G">D1003-A.M.100.A.G</M>
+      <M ID="A">D1103-A.M.100.A.A</M>
+      <M ID="G">D1103-A.M.100.A.G</M>
+      <M ID="C">D1103-A.M.100.A.C</M>
+      <M ID="E">D1103-A.M.100.A.E</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1004-A.M.100.A">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1104-A.M.100.A">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1004-A.M.100.A.7</P>
+      <P ID="7">D1104-A.M.100.A.7</P>
     </PEERS>
     <MODELS>
-      <M ID="F">D1004-A.M.100.A.F</M>
-      <M ID="D">D1004-A.M.100.A.D</M>
-      <M ID="A">D1004-A.M.100.A.A</M>
-      <M ID="H">D1004-A.M.100.A.H</M>
+      <M ID="B">D1104-A.M.100.A.B</M>
+      <M ID="D">D1104-A.M.100.A.D</M>
+      <M ID="A">D1104-A.M.100.A.A</M>
+      <M ID="H">D1104-A.M.100.A.H</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1005-A.M.100.A">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1105-A.M.100.A">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1005-A.M.100.A.7</P>
+      <P ID="7">D1105-A.M.100.A.7</P>
     </PEERS>
     <MODELS>
-      <M ID="A">D1005-A.M.100.A.A</M>
-      <M ID="E">D1005-A.M.100.A.E</M>
-      <M ID="F">D1005-A.M.100.A.F</M>
-      <M ID="G">D1005-A.M.100.A.G</M>
+      <M ID="H">D1105-A.M.100.A.H</M>
+      <M ID="A">D1105-A.M.100.A.A</M>
+      <M ID="B">D1105-A.M.100.A.B</M>
+      <M ID="D">D1105-A.M.100.A.D</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1006-A.M.100.A">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1106-A.M.100.A">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1006-A.M.100.A.7</P>
+      <P ID="7">D1106-A.M.100.A.7</P>
     </PEERS>
     <MODELS>
-      <M ID="D">D1006-A.M.100.A.D</M>
-      <M ID="A">D1006-A.M.100.A.A</M>
-      <M ID="B">D1006-A.M.100.A.B</M>
-      <M ID="F">D1006-A.M.100.A.F</M>
+      <M ID="G">D1106-A.M.100.A.G</M>
+      <M ID="D">D1106-A.M.100.A.D</M>
+      <M ID="A">D1106-A.M.100.A.A</M>
+      <M ID="C">D1106-A.M.100.A.C</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1007-A.M.100.B">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1107-A.M.100.B">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1007-A.M.100.B.7</P>
+      <P ID="7">D1107-A.M.100.B.7</P>
     </PEERS>
     <MODELS>
-      <M ID="B">D1007-A.M.100.B.B</M>
-      <M ID="H">D1007-A.M.100.B.H</M>
-      <M ID="E">D1007-A.M.100.B.E</M>
-      <M ID="A">D1007-A.M.100.B.A</M>
+      <M ID="F">D1107-A.M.100.B.F</M>
+      <M ID="E">D1107-A.M.100.B.E</M>
+      <M ID="B">D1107-A.M.100.B.B</M>
+      <M ID="C">D1107-A.M.100.B.C</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1008-A.M.100.B">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1108-A.M.100.B">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1008-A.M.100.B.7</P>
+      <P ID="7">D1108-A.M.100.B.7</P>
     </PEERS>
     <MODELS>
-      <M ID="H">D1008-A.M.100.B.H</M>
-      <M ID="D">D1008-A.M.100.B.D</M>
-      <M ID="E">D1008-A.M.100.B.E</M>
-      <M ID="B">D1008-A.M.100.B.B</M>
+      <M ID="A">D1108-A.M.100.B.A</M>
+      <M ID="G">D1108-A.M.100.B.G</M>
+      <M ID="B">D1108-A.M.100.B.B</M>
+      <M ID="C">D1108-A.M.100.B.C</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1009-A.M.100.B">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1109-A.M.100.B">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1009-A.M.100.B.7</P>
+      <P ID="7">D1109-A.M.100.B.7</P>
     </PEERS>
     <MODELS>
-      <M ID="C">D1009-A.M.100.B.C</M>
-      <M ID="G">D1009-A.M.100.B.G</M>
-      <M ID="B">D1009-A.M.100.B.B</M>
-      <M ID="F">D1009-A.M.100.B.F</M>
+      <M ID="F">D1109-A.M.100.B.F</M>
+      <M ID="H">D1109-A.M.100.B.H</M>
+      <M ID="B">D1109-A.M.100.B.B</M>
+      <M ID="E">D1109-A.M.100.B.E</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1010-A.M.100.B">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1110-A.M.100.B">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1010-A.M.100.B.7</P>
+      <P ID="7">D1110-A.M.100.B.7</P>
     </PEERS>
     <MODELS>
-      <M ID="B">D1010-A.M.100.B.B</M>
-      <M ID="G">D1010-A.M.100.B.G</M>
-      <M ID="H">D1010-A.M.100.B.H</M>
-      <M ID="C">D1010-A.M.100.B.C</M>
+      <M ID="H">D1110-A.M.100.B.H</M>
+      <M ID="D">D1110-A.M.100.B.D</M>
+      <M ID="B">D1110-A.M.100.B.B</M>
+      <M ID="E">D1110-A.M.100.B.E</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1011-A.M.100.C">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1111-A.M.100.B">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1011-A.M.100.C.7</P>
+      <P ID="7">D1111-A.M.100.B.7</P>
     </PEERS>
     <MODELS>
-      <M ID="C">D1011-A.M.100.C.C</M>
-      <M ID="A">D1011-A.M.100.C.A</M>
-      <M ID="E">D1011-A.M.100.C.E</M>
-      <M ID="B">D1011-A.M.100.C.B</M>
+      <M ID="B">D1111-A.M.100.B.B</M>
+      <M ID="C">D1111-A.M.100.B.C</M>
+      <M ID="E">D1111-A.M.100.B.E</M>
+      <M ID="A">D1111-A.M.100.B.A</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1012-A.M.100.C">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1112-A.M.100.C">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1012-A.M.100.C.7</P>
+      <P ID="7">D1112-A.M.100.C.7</P>
     </PEERS>
     <MODELS>
-      <M ID="E">D1012-A.M.100.C.E</M>
-      <M ID="F">D1012-A.M.100.C.F</M>
-      <M ID="D">D1012-A.M.100.C.D</M>
-      <M ID="C">D1012-A.M.100.C.C</M>
+      <M ID="C">D1112-A.M.100.C.C</M>
+      <M ID="A">D1112-A.M.100.C.A</M>
+      <M ID="H">D1112-A.M.100.C.H</M>
+      <M ID="G">D1112-A.M.100.C.G</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1013-A.M.100.C">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1113-A.M.100.C">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1013-A.M.100.C.7</P>
+      <P ID="7">D1113-A.M.100.C.7</P>
     </PEERS>
     <MODELS>
-      <M ID="C">D1013-A.M.100.C.C</M>
-      <M ID="A">D1013-A.M.100.C.A</M>
-      <M ID="B">D1013-A.M.100.C.B</M>
-      <M ID="D">D1013-A.M.100.C.D</M>
+      <M ID="B">D1113-A.M.100.C.B</M>
+      <M ID="F">D1113-A.M.100.C.F</M>
+      <M ID="E">D1113-A.M.100.C.E</M>
+      <M ID="C">D1113-A.M.100.C.C</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1014-A.M.100.C">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1114-A.M.100.C">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1014-A.M.100.C.7</P>
+      <P ID="7">D1114-A.M.100.C.7</P>
     </PEERS>
     <MODELS>
-      <M ID="G">D1014-A.M.100.C.G</M>
-      <M ID="C">D1014-A.M.100.C.C</M>
-      <M ID="E">D1014-A.M.100.C.E</M>
-      <M ID="H">D1014-A.M.100.C.H</M>
+      <M ID="G">D1114-A.M.100.C.G</M>
+      <M ID="F">D1114-A.M.100.C.F</M>
+      <M ID="C">D1114-A.M.100.C.C</M>
+      <M ID="E">D1114-A.M.100.C.E</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1015-A.M.100.C">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1115-A.M.100.C">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1015-A.M.100.C.7</P>
+      <P ID="7">D1115-A.M.100.C.7</P>
     </PEERS>
     <MODELS>
-      <M ID="C">D1015-A.M.100.C.C</M>
-      <M ID="A">D1015-A.M.100.C.A</M>
-      <M ID="E">D1015-A.M.100.C.E</M>
-      <M ID="F">D1015-A.M.100.C.F</M>
+      <M ID="D">D1115-A.M.100.C.D</M>
+      <M ID="H">D1115-A.M.100.C.H</M>
+      <M ID="C">D1115-A.M.100.C.C</M>
+      <M ID="A">D1115-A.M.100.C.A</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1016-A.M.100.C">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1116-A.M.100.C">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1016-A.M.100.C.7</P>
+      <P ID="7">D1116-A.M.100.C.7</P>
     </PEERS>
     <MODELS>
-      <M ID="B">D1016-A.M.100.C.B</M>
-      <M ID="E">D1016-A.M.100.C.E</M>
-      <M ID="H">D1016-A.M.100.C.H</M>
-      <M ID="C">D1016-A.M.100.C.C</M>
+      <M ID="F">D1116-A.M.100.C.F</M>
+      <M ID="C">D1116-A.M.100.C.C</M>
+      <M ID="E">D1116-A.M.100.C.E</M>
+      <M ID="G">D1116-A.M.100.C.G</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1017-A.M.100.D">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1117-A.M.100.C">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1017-A.M.100.D.7</P>
+      <P ID="7">D1117-A.M.100.C.7</P>
     </PEERS>
     <MODELS>
-      <M ID="A">D1017-A.M.100.D.A</M>
-      <M ID="G">D1017-A.M.100.D.G</M>
-      <M ID="D">D1017-A.M.100.D.D</M>
-      <M ID="B">D1017-A.M.100.D.B</M>
+      <M ID="F">D1117-A.M.100.C.F</M>
+      <M ID="B">D1117-A.M.100.C.B</M>
+      <M ID="H">D1117-A.M.100.C.H</M>
+      <M ID="C">D1117-A.M.100.C.C</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1018-A.M.100.D">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1118-A.M.100.D">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1018-A.M.100.D.7</P>
+      <P ID="7">D1118-A.M.100.D.7</P>
     </PEERS>
     <MODELS>
-      <M ID="C">D1018-A.M.100.D.C</M>
-      <M ID="B">D1018-A.M.100.D.B</M>
-      <M ID="D">D1018-A.M.100.D.D</M>
-      <M ID="G">D1018-A.M.100.D.G</M>
+      <M ID="D">D1118-A.M.100.D.D</M>
+      <M ID="F">D1118-A.M.100.D.F</M>
+      <M ID="A">D1118-A.M.100.D.A</M>
+      <M ID="E">D1118-A.M.100.D.E</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1019-A.M.100.D">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1119-A.M.100.D">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1019-A.M.100.D.7</P>
+      <P ID="7">D1119-A.M.100.D.7</P>
     </PEERS>
     <MODELS>
-      <M ID="F">D1019-A.M.100.D.F</M>
-      <M ID="D">D1019-A.M.100.D.D</M>
-      <M ID="C">D1019-A.M.100.D.C</M>
-      <M ID="H">D1019-A.M.100.D.H</M>
+      <M ID="G">D1119-A.M.100.D.G</M>
+      <M ID="B">D1119-A.M.100.D.B</M>
+      <M ID="D">D1119-A.M.100.D.D</M>
+      <M ID="C">D1119-A.M.100.D.C</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1020-A.M.100.D">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1120-A.M.100.D">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1020-A.M.100.D.7</P>
+      <P ID="7">D1120-A.M.100.D.7</P>
     </PEERS>
     <MODELS>
-      <M ID="D">D1020-A.M.100.D.D</M>
-      <M ID="A">D1020-A.M.100.D.A</M>
-      <M ID="G">D1020-A.M.100.D.G</M>
-      <M ID="H">D1020-A.M.100.D.H</M>
+      <M ID="D">D1120-A.M.100.D.D</M>
+      <M ID="B">D1120-A.M.100.D.B</M>
+      <M ID="H">D1120-A.M.100.D.H</M>
+      <M ID="A">D1120-A.M.100.D.A</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1021-A.M.100.D">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1121-A.M.100.D">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1021-A.M.100.D.7</P>
+      <P ID="7">D1121-A.M.100.D.7</P>
     </PEERS>
     <MODELS>
-      <M ID="B">D1021-A.M.100.D.B</M>
-      <M ID="E">D1021-A.M.100.D.E</M>
-      <M ID="A">D1021-A.M.100.D.A</M>
-      <M ID="D">D1021-A.M.100.D.D</M>
+      <M ID="D">D1121-A.M.100.D.D</M>
+      <M ID="G">D1121-A.M.100.D.G</M>
+      <M ID="C">D1121-A.M.100.D.C</M>
+      <M ID="B">D1121-A.M.100.D.B</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1022-A.M.100.D">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1122-A.M.100.D">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1022-A.M.100.D.7</P>
+      <P ID="7">D1122-A.M.100.D.7</P>
     </PEERS>
     <MODELS>
-      <M ID="H">D1022-A.M.100.D.H</M>
-      <M ID="C">D1022-A.M.100.D.C</M>
-      <M ID="D">D1022-A.M.100.D.D</M>
-      <M ID="F">D1022-A.M.100.D.F</M>
+      <M ID="E">D1122-A.M.100.D.E</M>
+      <M ID="D">D1122-A.M.100.D.D</M>
+      <M ID="C">D1122-A.M.100.D.C</M>
+      <M ID="F">D1122-A.M.100.D.F</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1023-A.M.100.E">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1123-A.M.100.D">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1023-A.M.100.E.7</P>
+      <P ID="7">D1123-A.M.100.D.7</P>
     </PEERS>
     <MODELS>
-      <M ID="E">D1023-A.M.100.E.E</M>
-      <M ID="G">D1023-A.M.100.E.G</M>
-      <M ID="B">D1023-A.M.100.E.B</M>
-      <M ID="D">D1023-A.M.100.E.D</M>
+      <M ID="G">D1123-A.M.100.D.G</M>
+      <M ID="H">D1123-A.M.100.D.H</M>
+      <M ID="A">D1123-A.M.100.D.A</M>
+      <M ID="D">D1123-A.M.100.D.D</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1024-A.M.100.E">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1124-A.M.100.E">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1024-A.M.100.E.7</P>
+      <P ID="7">D1124-A.M.100.E.7</P>
     </PEERS>
     <MODELS>
-      <M ID="C">D1024-A.M.100.E.C</M>
-      <M ID="F">D1024-A.M.100.E.F</M>
-      <M ID="H">D1024-A.M.100.E.H</M>
-      <M ID="E">D1024-A.M.100.E.E</M>
+      <M ID="C">D1124-A.M.100.E.C</M>
+      <M ID="F">D1124-A.M.100.E.F</M>
+      <M ID="G">D1124-A.M.100.E.G</M>
+      <M ID="E">D1124-A.M.100.E.E</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1025-A.M.100.E">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1125-A.M.100.E">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1025-A.M.100.E.7</P>
+      <P ID="7">D1125-A.M.100.E.7</P>
     </PEERS>
     <MODELS>
-      <M ID="H">D1025-A.M.100.E.H</M>
-      <M ID="D">D1025-A.M.100.E.D</M>
-      <M ID="A">D1025-A.M.100.E.A</M>
-      <M ID="E">D1025-A.M.100.E.E</M>
+      <M ID="B">D1125-A.M.100.E.B</M>
+      <M ID="G">D1125-A.M.100.E.G</M>
+      <M ID="E">D1125-A.M.100.E.E</M>
+      <M ID="C">D1125-A.M.100.E.C</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1026-A.M.100.E">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1126-A.M.100.E">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1026-A.M.100.E.7</P>
+      <P ID="7">D1126-A.M.100.E.7</P>
     </PEERS>
     <MODELS>
-      <M ID="G">D1026-A.M.100.E.G</M>
-      <M ID="C">D1026-A.M.100.E.C</M>
-      <M ID="F">D1026-A.M.100.E.F</M>
-      <M ID="E">D1026-A.M.100.E.E</M>
+      <M ID="F">D1126-A.M.100.E.F</M>
+      <M ID="A">D1126-A.M.100.E.A</M>
+      <M ID="H">D1126-A.M.100.E.H</M>
+      <M ID="E">D1126-A.M.100.E.E</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1027-A.M.100.E">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1127-A.M.100.E">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1027-A.M.100.E.7</P>
+      <P ID="7">D1127-A.M.100.E.7</P>
     </PEERS>
     <MODELS>
-      <M ID="B">D1027-A.M.100.E.B</M>
-      <M ID="E">D1027-A.M.100.E.E</M>
-      <M ID="G">D1027-A.M.100.E.G</M>
-      <M ID="D">D1027-A.M.100.E.D</M>
+      <M ID="H">D1127-A.M.100.E.H</M>
+      <M ID="E">D1127-A.M.100.E.E</M>
+      <M ID="A">D1127-A.M.100.E.A</M>
+      <M ID="D">D1127-A.M.100.E.D</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1028-A.M.100.E">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1128-A.M.100.E">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1028-A.M.100.E.7</P>
+      <P ID="7">D1128-A.M.100.E.7</P>
     </PEERS>
     <MODELS>
-      <M ID="D">D1028-A.M.100.E.D</M>
-      <M ID="B">D1028-A.M.100.E.B</M>
-      <M ID="E">D1028-A.M.100.E.E</M>
-      <M ID="A">D1028-A.M.100.E.A</M>
+      <M ID="F">D1128-A.M.100.E.F</M>
+      <M ID="E">D1128-A.M.100.E.E</M>
+      <M ID="B">D1128-A.M.100.E.B</M>
+      <M ID="D">D1128-A.M.100.E.D</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1029-A.M.100.F">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1129-A.M.100.E">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1029-A.M.100.F.7</P>
+      <P ID="7">D1129-A.M.100.E.7</P>
     </PEERS>
     <MODELS>
-      <M ID="H">D1029-A.M.100.F.H</M>
-      <M ID="C">D1029-A.M.100.F.C</M>
-      <M ID="A">D1029-A.M.100.F.A</M>
-      <M ID="F">D1029-A.M.100.F.F</M>
+      <M ID="F">D1129-A.M.100.E.F</M>
+      <M ID="E">D1129-A.M.100.E.E</M>
+      <M ID="B">D1129-A.M.100.E.B</M>
+      <M ID="C">D1129-A.M.100.E.C</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1030-A.M.100.F">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1130-A.M.100.F">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1030-A.M.100.F.7</P>
+      <P ID="7">D1130-A.M.100.F.7</P>
     </PEERS>
     <MODELS>
-      <M ID="F">D1030-A.M.100.F.F</M>
-      <M ID="D">D1030-A.M.100.F.D</M>
-      <M ID="G">D1030-A.M.100.F.G</M>
-      <M ID="E">D1030-A.M.100.F.E</M>
+      <M ID="G">D1130-A.M.100.F.G</M>
+      <M ID="A">D1130-A.M.100.F.A</M>
+      <M ID="F">D1130-A.M.100.F.F</M>
+      <M ID="H">D1130-A.M.100.F.H</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1031-A.M.100.F">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1131-A.M.100.F">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1031-A.M.100.F.7</P>
+      <P ID="7">D1131-A.M.100.F.7</P>
     </PEERS>
     <MODELS>
-      <M ID="A">D1031-A.M.100.F.A</M>
-      <M ID="C">D1031-A.M.100.F.C</M>
-      <M ID="H">D1031-A.M.100.F.H</M>
-      <M ID="F">D1031-A.M.100.F.F</M>
+      <M ID="F">D1131-A.M.100.F.F</M>
+      <M ID="H">D1131-A.M.100.F.H</M>
+      <M ID="E">D1131-A.M.100.F.E</M>
+      <M ID="D">D1131-A.M.100.F.D</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1032-A.M.100.F">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1132-A.M.100.F">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1032-A.M.100.F.7</P>
+      <P ID="7">D1132-A.M.100.F.7</P>
     </PEERS>
     <MODELS>
-      <M ID="F">D1032-A.M.100.F.F</M>
-      <M ID="B">D1032-A.M.100.F.B</M>
-      <M ID="D">D1032-A.M.100.F.D</M>
-      <M ID="G">D1032-A.M.100.F.G</M>
+      <M ID="H">D1132-A.M.100.F.H</M>
+      <M ID="A">D1132-A.M.100.F.A</M>
+      <M ID="F">D1132-A.M.100.F.F</M>
+      <M ID="C">D1132-A.M.100.F.C</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1033-A.M.100.F">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1133-A.M.100.F">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1033-A.M.100.F.7</P>
+      <P ID="7">D1133-A.M.100.F.7</P>
     </PEERS>
     <MODELS>
-      <M ID="H">D1033-A.M.100.F.H</M>
-      <M ID="E">D1033-A.M.100.F.E</M>
-      <M ID="F">D1033-A.M.100.F.F</M>
-      <M ID="C">D1033-A.M.100.F.C</M>
+      <M ID="D">D1133-A.M.100.F.D</M>
+      <M ID="B">D1133-A.M.100.F.B</M>
+      <M ID="F">D1133-A.M.100.F.F</M>
+      <M ID="A">D1133-A.M.100.F.A</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1034-A.M.100.F">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1134-A.M.100.F">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1034-A.M.100.F.7</P>
+      <P ID="7">D1134-A.M.100.F.7</P>
     </PEERS>
     <MODELS>
-      <M ID="F">D1034-A.M.100.F.F</M>
-      <M ID="B">D1034-A.M.100.F.B</M>
-      <M ID="A">D1034-A.M.100.F.A</M>
-      <M ID="H">D1034-A.M.100.F.H</M>
+      <M ID="A">D1134-A.M.100.F.A</M>
+      <M ID="F">D1134-A.M.100.F.F</M>
+      <M ID="D">D1134-A.M.100.F.D</M>
+      <M ID="H">D1134-A.M.100.F.H</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1035-A.M.100.G">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1135-A.M.100.G">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1035-A.M.100.G.7</P>
+      <P ID="7">D1135-A.M.100.G.7</P>
     </PEERS>
     <MODELS>
-      <M ID="E">D1035-A.M.100.G.E</M>
-      <M ID="F">D1035-A.M.100.G.F</M>
-      <M ID="G">D1035-A.M.100.G.G</M>
-      <M ID="D">D1035-A.M.100.G.D</M>
+      <M ID="E">D1135-A.M.100.G.E</M>
+      <M ID="G">D1135-A.M.100.G.G</M>
+      <M ID="H">D1135-A.M.100.G.H</M>
+      <M ID="F">D1135-A.M.100.G.F</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1036-A.M.100.G">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1136-A.M.100.G">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1036-A.M.100.G.7</P>
+      <P ID="7">D1136-A.M.100.G.7</P>
     </PEERS>
     <MODELS>
-      <M ID="F">D1036-A.M.100.G.F</M>
-      <M ID="B">D1036-A.M.100.G.B</M>
-      <M ID="A">D1036-A.M.100.G.A</M>
-      <M ID="G">D1036-A.M.100.G.G</M>
+      <M ID="E">D1136-A.M.100.G.E</M>
+      <M ID="G">D1136-A.M.100.G.G</M>
+      <M ID="B">D1136-A.M.100.G.B</M>
+      <M ID="A">D1136-A.M.100.G.A</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1037-A.M.100.G">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1137-A.M.100.G">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1037-A.M.100.G.7</P>
+      <P ID="7">D1137-A.M.100.G.7</P>
     </PEERS>
     <MODELS>
-      <M ID="B">D1037-A.M.100.G.B</M>
-      <M ID="G">D1037-A.M.100.G.G</M>
-      <M ID="H">D1037-A.M.100.G.H</M>
-      <M ID="C">D1037-A.M.100.G.C</M>
+      <M ID="F">D1137-A.M.100.G.F</M>
+      <M ID="E">D1137-A.M.100.G.E</M>
+      <M ID="G">D1137-A.M.100.G.G</M>
+      <M ID="B">D1137-A.M.100.G.B</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1038-A.M.100.G">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1138-A.M.100.G">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1038-A.M.100.G.7</P>
+      <P ID="7">D1138-A.M.100.G.7</P>
     </PEERS>
     <MODELS>
-      <M ID="C">D1038-A.M.100.G.C</M>
-      <M ID="F">D1038-A.M.100.G.F</M>
-      <M ID="G">D1038-A.M.100.G.G</M>
-      <M ID="A">D1038-A.M.100.G.A</M>
+      <M ID="A">D1138-A.M.100.G.A</M>
+      <M ID="H">D1138-A.M.100.G.H</M>
+      <M ID="B">D1138-A.M.100.G.B</M>
+      <M ID="G">D1138-A.M.100.G.G</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1039-A.M.100.G">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1139-A.M.100.G">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1039-A.M.100.G.7</P>
+      <P ID="7">D1139-A.M.100.G.7</P>
     </PEERS>
     <MODELS>
-      <M ID="D">D1039-A.M.100.G.D</M>
-      <M ID="G">D1039-A.M.100.G.G</M>
-      <M ID="A">D1039-A.M.100.G.A</M>
-      <M ID="E">D1039-A.M.100.G.E</M>
+      <M ID="G">D1139-A.M.100.G.G</M>
+      <M ID="C">D1139-A.M.100.G.C</M>
+      <M ID="F">D1139-A.M.100.G.F</M>
+      <M ID="D">D1139-A.M.100.G.D</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1040-A.M.100.G">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1140-A.M.100.H">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1040-A.M.100.G.7</P>
+      <P ID="7">D1140-A.M.100.H.7</P>
     </PEERS>
     <MODELS>
-      <M ID="F">D1040-A.M.100.G.F</M>
-      <M ID="B">D1040-A.M.100.G.B</M>
-      <M ID="G">D1040-A.M.100.G.G</M>
-      <M ID="C">D1040-A.M.100.G.C</M>
+      <M ID="B">D1140-A.M.100.H.B</M>
+      <M ID="H">D1140-A.M.100.H.H</M>
+      <M ID="G">D1140-A.M.100.H.G</M>
+      <M ID="D">D1140-A.M.100.H.D</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1041-A.M.100.H">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1141-A.M.100.H">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1041-A.M.100.H.7</P>
+      <P ID="7">D1141-A.M.100.H.7</P>
     </PEERS>
     <MODELS>
-      <M ID="E">D1041-A.M.100.H.E</M>
-      <M ID="D">D1041-A.M.100.H.D</M>
-      <M ID="H">D1041-A.M.100.H.H</M>
-      <M ID="G">D1041-A.M.100.H.G</M>
+      <M ID="F">D1141-A.M.100.H.F</M>
+      <M ID="D">D1141-A.M.100.H.D</M>
+      <M ID="H">D1141-A.M.100.H.H</M>
+      <M ID="G">D1141-A.M.100.H.G</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1042-A.M.100.H">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1142-A.M.100.H">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1042-A.M.100.H.7</P>
+      <P ID="7">D1142-A.M.100.H.7</P>
     </PEERS>
     <MODELS>
-      <M ID="H">D1042-A.M.100.H.H</M>
-      <M ID="B">D1042-A.M.100.H.B</M>
-      <M ID="F">D1042-A.M.100.H.F</M>
-      <M ID="C">D1042-A.M.100.H.C</M>
+      <M ID="H">D1142-A.M.100.H.H</M>
+      <M ID="C">D1142-A.M.100.H.C</M>
+      <M ID="G">D1142-A.M.100.H.G</M>
+      <M ID="E">D1142-A.M.100.H.E</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1043-A.M.100.H">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1143-A.M.100.H">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1043-A.M.100.H.7</P>
+      <P ID="7">D1143-A.M.100.H.7</P>
     </PEERS>
     <MODELS>
-      <M ID="H">D1043-A.M.100.H.H</M>
-      <M ID="B">D1043-A.M.100.H.B</M>
-      <M ID="A">D1043-A.M.100.H.A</M>
-      <M ID="G">D1043-A.M.100.H.G</M>
+      <M ID="B">D1143-A.M.100.H.B</M>
+      <M ID="H">D1143-A.M.100.H.H</M>
+      <M ID="D">D1143-A.M.100.H.D</M>
+      <M ID="A">D1143-A.M.100.H.A</M>
     </MODELS>
   </EVAL>
-  <EVAL ID="D1044-A.M.100.H">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
+  <EVAL ID="D1144-A.M.100.H">
+    <PEER-ROOT>outputs/D3_evaltest</PEER-ROOT>
+    <MODEL-ROOT>/dropbox/17-18/573/Data/models/evaltest/</MODEL-ROOT>
     <INPUT-FORMAT TYPE="SPL"/>
     <PEERS>
-      <P ID="7">D1044-A.M.100.H.7</P>
+      <P ID="7">D1144-A.M.100.H.7</P>
     </PEERS>
     <MODELS>
-      <M ID="H">D1044-A.M.100.H.H</M>
-      <M ID="G">D1044-A.M.100.H.G</M>
-      <M ID="A">D1044-A.M.100.H.A</M>
-      <M ID="D">D1044-A.M.100.H.D</M>
-    </MODELS>
-  </EVAL>
-  <EVAL ID="D1045-A.M.100.H">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
-    <INPUT-FORMAT TYPE="SPL"/>
-    <PEERS>
-      <P ID="7">D1045-A.M.100.H.7</P>
-    </PEERS>
-    <MODELS>
-      <M ID="H">D1045-A.M.100.H.H</M>
-      <M ID="E">D1045-A.M.100.H.E</M>
-      <M ID="F">D1045-A.M.100.H.F</M>
-      <M ID="C">D1045-A.M.100.H.C</M>
-    </MODELS>
-  </EVAL>
-  <EVAL ID="D1046-A.M.100.H">
-    <PEER-ROOT>outputs/D3</PEER-ROOT>
-    <MODEL-ROOT>/dropbox/17-18/573/Data/models/devtest/</MODEL-ROOT>
-    <INPUT-FORMAT TYPE="SPL"/>
-    <PEERS>
-      <P ID="7">D1046-A.M.100.H.7</P>
-    </PEERS>
-    <MODELS>
-      <M ID="D">D1046-A.M.100.H.D</M>
-      <M ID="G">D1046-A.M.100.H.G</M>
-      <M ID="E">D1046-A.M.100.H.E</M>
-      <M ID="H">D1046-A.M.100.H.H</M>
+      <M ID="G">D1144-A.M.100.H.G</M>
+      <M ID="C">D1144-A.M.100.H.C</M>
+      <M ID="H">D1144-A.M.100.H.H</M>
+      <M ID="D">D1144-A.M.100.H.D</M>
     </MODELS>
   </EVAL>
 </ROUGE_EVAL>
